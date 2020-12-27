@@ -191,7 +191,7 @@ The Red Team was able to penetrate both `Target 1` and `Target 2`, and retrieve 
     ![user-passwd](/Images/mysql-user-login-pass_Target1.png)
     
     'show tables;'
-    ![tables](/images/mysql-tables_Target1.PNG)
+    ![tables](/Images/mysql-tables_Target1.PNG)
     
     'describe wp_users;'
     ![wp-users](/Images/mysql-wp_users_Target1.png)
@@ -247,8 +247,9 @@ The Red Team was able to penetrate both `Target 1` and `Target 2`, and retrieve 
     
     ![found1-T2](/Images/flag1-found_target2.PNG)
     
-    REMEDIATION: we should add line, "Options -Indexes" in .ht access (must be added in each folder) OR
+    REMEDIATION: Disable directory listing; in .ht access (must be added in each folder) we should add line, "Options -Indexes" OR
        we can disable directory listing for a specified directory by adding this code in Apache Virtual Host
+       
       <Directory /var/www/public_html>
           Options -Indexes
       </Directory>
