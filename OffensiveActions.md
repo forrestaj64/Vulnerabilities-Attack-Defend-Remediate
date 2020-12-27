@@ -55,7 +55,7 @@ CVE | RATING | APACHE DETAIL | VULNERS REFERENCE
  CVE-2017-3167 | 7.5 | may lead to authentication requirements being bypassed | https://vulners.com/cve/CVE-2017-3167
  EXPLOITPACK:44C5118F831D55FAF4259C41D8BDA0AB | 7.2 | apache2ctl graceful logrotate Local Privilege Escalation | https://vulners.com/exploitpack/EXPLOITPACK:44C5118F831D55FAF4259C41D8BDA0AB | *EXPLOIT*
  CVE-2019-0211 | 7.2 | privilege escalation from modules' scripts | https://vulners.com/cve/CVE-2019-0211
- 1337DAY-ID-32502 | apache2ctl graceful logrotate Local Privilege Escalation | 7.2 | https://vulners.com/zdt/1337DAY-ID-32502 *EXPLOIT*
+ 1337DAY-ID-32502 | 7.2 | apache2ctl graceful logrotate Local Privilege Escalation | https://vulners.com/zdt/1337DAY-ID-32502 *EXPLOIT*
  CVE-2018-1312 | 6.8 | Weak Digest auth nonce generation in mod_auth_digest | https://vulners.com/cve/CVE-2018-1312
  CVE-2017-15715 | 6.8 | <FilesMatch> bypass with a trailing newline in the file name | https://vulners.com/cve/CVE-2017-15715
  CVE-2019-10082 | 6.4 | http/2 session handling could be made to read memory after being freed, during connection shutdown | https://vulners.com/cve/CVE-2019-10082
@@ -80,7 +80,7 @@ CVE | RATING | APACHE DETAIL | VULNERS REFERENCE
  CVE-2018-17189 | 5.0 | https://vulners.com/cve/CVE-2018-17189
  CVE-2018-1333 | 5.0 | https://vulners.com/cve/CVE-2018-1333
  CVE-2018-1303 | 5.0 | https://vulners.com/cve/CVE-2018-1303
- CVE-2017-9798 |  5.0 | https://vulners.com/cve/CVE-2017-9798
+ CVE-2017-9798 | 5.0 | https://vulners.com/cve/CVE-2017-9798
  CVE-2017-15710 | 5.0 | https://vulners.com/cve/CVE-2017-15710
  CVE-2016-8743 | 5.0 | https://vulners.com/cve/CVE-2016-8743
  CVE-2016-2161 | 5.0 | https://vulners.com/cve/CVE-2016-2161
