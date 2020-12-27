@@ -157,7 +157,7 @@ The Red Team was able to penetrate both `Target 1` and `Target 2`, and retrieve 
       Run wpscan to enumerate users: 'wpscan --url http://192.168.1.110/wordpress --enumerate u'
       
       ![wpscan1a](/Images/WPScan_Target1a.PNG)
-      ![wpscan1b]/Images/WPScan_Target1b.PNG)
+      ![wpscan1b]/Images/WPScan_Target1b.png)
 
   - flag3 hash value: `afc01ab5650591e7dccf93122770cd2`
       ![flag3](/Images/flag3-detail_Target1.png)
@@ -169,7 +169,7 @@ The Red Team was able to penetrate both `Target 1` and `Target 2`, and retrieve 
     REMEDIATION: The principle of least privilege should be enforced.
       'chmod 600 /var/www/html/wordpress/wp-config.php'
     michael@target1:/user/bin$ 'mysql -u root -p'
-      ![mysql-login](/Images/mysql-login_Target1.PNG)
+      ![mysql-login](/Images/mysql-login_Target1.png)
     mysql login achieved - what can we find ?
       
     'show databases;'
