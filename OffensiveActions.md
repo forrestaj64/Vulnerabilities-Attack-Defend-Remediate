@@ -50,7 +50,7 @@ The following vulnerabilities were identified on each target:
 cpe:/a:apache:http_server:2.4.10: 
 CVE | RATING | APACHE DETAIL | VULNERS.COM REFERENCE
  ------------ | ------------- | ------------- | -------------
- CVE-2020-11984 | 7.5 | mod_proxy_uwsgi info disclosure and possible Remote Code Execution | https://vulners.com/cve/CVE-2020-11984
+ CVE-2020-11984 | 7.5 | mod_proxy_uwsgi info disclosure, possible Remote Code Execution | https://vulners.com/cve/CVE-2020-11984
  CVE-2017-7679 | 7.5 | mod_mime buffer overread | https://vulners.com/cve/CVE-2017-7679
  CVE-2017-7668 | 7.5 | a bug in token list parsing | https://vulners.com/cve/CVE-2017-7668
  CVE-2017-3169 | 7.5 | mod_ssl may dereference a NULL pointer | https://vulners.com/cve/CVE-2017-3169
@@ -164,7 +164,8 @@ The Red Team was able to penetrate both `Target 1` and `Target 2`, and retrieve 
       Run wpscan to enumerate users: <b>'wpscan --url http://192.168.1.110/wordpress --enumerate u'<\b>
       
       ![wpscan1a](/Images/WPScan_Target1a.PNG)
-      ![wpscan1b]/Images/WPScan_Target1b.png)
+      
+      ![wpscan1b]/Images/WPScan_Target1b.PNG)
 
   - flag3 hash value: `afc01ab5650591e7dccf93122770cd2`
       ![flag3](/Images/flag3-detail_Target1.png)
@@ -177,6 +178,7 @@ The Red Team was able to penetrate both `Target 1` and `Target 2`, and retrieve 
       'chmod 600 /var/www/html/wordpress/wp-config.php'
     michael@target1:/user/bin$ 'mysql -u root -p'
       ![mysql-login](/Images/mysql-login_Target1.png)
+      
     mysql login achieved - what can we find ?
       
     'show databases;'
