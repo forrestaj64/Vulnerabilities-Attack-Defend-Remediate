@@ -48,7 +48,7 @@ The following vulnerabilities were identified on each target:
  <h4> Target 1 and Target 2: List of Critical Vulnerabilities </h4>
 
 cpe:/a:apache:http_server:2.4.10: 
-CVE REFERENCE | RATING | IN BRIEF
+CVE REFERENCE | RATING | ISSUE IN BRIEF
  ------------ | ------------- | ------------- 
  https://vulners.com/cve/CVE-2020-11984 | 7.5 | mod_proxy_uwsgi info disclosure, possible Remote Code Execution
  https://vulners.com/cve/CVE-2017-7679 | 7.5 | mod_mime buffer overread
@@ -62,34 +62,34 @@ CVE REFERENCE | RATING | IN BRIEF
  https://vulners.com/cve/CVE-2017-15715 | 6.8 | <FilesMatch> bypass with a trailing newline in the file name
  https://vulners.com/cve/CVE-2019-10082 | 6.4 | http/2 session handling could be made to read memory after being freed, during connection shutdown
  https://vulners.com/cve/CVE-2017-9788 | 6.4 | could reflect the stale value of uninitialized pool memory used by the prior request
- https://vulners.com/cve/CVE-2019-10097 | 6.0 | 
- https://vulners.com/cve/CVE-2019-0217 | 6.0 | 
- https://vulners.com/exploitdb/EDB-ID:47689 | 5.8 |  *EXPLOIT*
- https://vulners.com/cve/CVE-2020-1927 | 5.8 | 
- https://vulners.com/cve/CVE-2019-10098 | 5.8 | 
- https://vulners.com/zdt/1337DAY-ID-33577 | 5.8 | *EXPLOIT*
- https://vulners.com/cve/CVE-2016-5387 | 5.1 | 
- https://vulners.com/seebug/SSV:96537 | 5.0 | *EXPLOIT*
+ https://vulners.com/cve/CVE-2019-10097 | 6.0 | a specially crafted PROXY header could trigger a stack buffer overflow or NULL pointer deference
+ https://vulners.com/cve/CVE-2019-0217 | 6.0 | a race condition in mod_auth_digest, could allow bypassing configured access control restrictions
+ https://vulners.com/exploitdb/EDB-ID:47689 | 5.8 | Apache Httpd mod_rewrite - Open Redirects *EXPLOIT*
+ https://vulners.com/cve/CVE-2020-1927 | 5.8 | redirects configured with mod_rewrite with encoded new lines might redirect to an unexpected URL
+ https://vulners.com/cve/CVE-2019-10098 | 5.8 | self-referential redirects might be redirected instead to an unexpected URL
+ https://vulners.com/zdt/1337DAY-ID-33577 | 5.8 | Apache Httpd mod_rewrite - Open Redirects Vulnerability *EXPLOIT*
+ https://vulners.com/cve/CVE-2016-5387 | 5.1 | might allow remote attackers to redirect an application’s outbound HTTP traffic 
+ https://vulners.com/seebug/SSV:96537 | 5.0 | component processing of a request URL containing multiple consecutive slashes (‘/’) *EXPLOIT*
  https://vulners.com/metasploit/MSF:AUXILIARY/SCANNER/HTTP/APACHE_OPTIONSBLEED | 5.0 | *EXPLOIT*
  https://vulners.com/exploitpack/EXPLOITPACK:DAED9B9E8D259B28BF72FC7FDC4755A7 | 5.0 | *EXPLOIT*
  https://vulners.com/exploitpack/EXPLOITPACK:C8C256BE0BFF5FE1C0405CB0AA9C075D | 5.0 | *EXPLOIT*
- https://vulners.com/cve/CVE-2020-9490 | 5.0 | 
- https://vulners.com/cve/CVE-2020-1934 | 5.0 | 
- https://vulners.com/cve/CVE-2019-10081 | 5.0 |
- https://vulners.com/cve/CVE-2019-0220 | 5.0 | 
- https://vulners.com/cve/CVE-2019-0196 | 5.0 | 
- https://vulners.com/cve/CVE-2018-17199 | 5.0 | 
- https://vulners.com/cve/CVE-2018-17189 | 5.0 |
- https://vulners.com/cve/CVE-2018-1333 | 5.0 | 
- https://vulners.com/cve/CVE-2018-1303 | 5.0 | 
- https://vulners.com/cve/CVE-2017-9798 | 5.0 | 
- https://vulners.com/cve/CVE-2017-15710 | 5.0 | 
- https://vulners.com/cve/CVE-2016-8743 | 5.0 | 
- https://vulners.com/cve/CVE-2016-2161 | 5.0 | 
- https://vulners.com/cve/CVE-2016-0736| 5.0 | 
- https://vulners.com/cve/CVE-2015-3183 | 5.0 | 
- https://vulners.com/cve/CVE-2015-0228 | 5.0 | 
- https://vulners.com/cve/CVE-2014-3583 | 5.0 | 
+ https://vulners.com/cve/CVE-2020-9490 | 5.0 | a specially crafted value for the ‘Cache-Digest’ header could result in a crash
+ https://vulners.com/cve/CVE-2020-1934 | 5.0 | HTTP OPTIONS method can leak Apache's server memory
+ https://vulners.com/cve/CVE-2019-10081 | 5.0 | H2PushResource", could lead to an overwrite of memory in the pushing request’s pool, leading to crashes
+ https://vulners.com/cve/CVE-2019-0220 | 5.0 | OPTIONS request may bleed memory if the server has a .htaccess file with an invalid Limit method defined
+ https://vulners.com/cve/CVE-2019-0196 | 5.0 | http/2 request handling could be made to access freed memory in string comparison 
+ https://vulners.com/cve/CVE-2018-17199 | 5.0 | session expiry time to be ignored for mod_session_cookie sessions
+ https://vulners.com/cve/CVE-2018-17189 | 5.0 | HTTP/2 (mod_http2) connections unnecessarily occupied a server thread cleaning up that incoming data
+ https://vulners.com/cve/CVE-2018-1333 | 5.0 | specially crafting HTTP/2 requests could lead to worker exhaustion and a denial of service
+ https://vulners.com/cve/CVE-2018-1303 | 5.0 | mod_cache_socache out of bound read 
+ https://vulners.com/cve/CVE-2017-9798 | 5.0 | if httpd.conf has certain misconfigurations, httpd allows remote attackers to read secret data from process memory
+ https://vulners.com/cve/CVE-2017-15710 | 5.0 | an out of bound write of one NUL byte to a memory location that is not part of the string
+ https://vulners.com/cve/CVE-2016-8743 | 5.0 | may result in request smuggling, response splitting and cache pollution
+ https://vulners.com/cve/CVE-2016-2161 | 5.0 | malicious input to mod_auth_digest can cause the server to crash repeatedly
+ https://vulners.com/cve/CVE-2016-0736 | 5.0 | mod_session_crypto vulnerable to padding oracle attacks, particularly with CBC
+ https://vulners.com/cve/CVE-2015-3183 | 5.0 | modules/http/http_filters.c allows remote attackers to conduct HTTP request smuggling attacks via a crafted request
+ https://vulners.com/cve/CVE-2015-0228 | 5.0 | remote attackers to cause a denial of service (child-process crash) by sending a crafted WebSocket Ping 
+ https://vulners.com/cve/CVE-2014-3583 | 5.0 | handle_headers function (buffer over-read and daemon crash) via long response headers
  https://vulners.com/zdt/1337DAY-ID-28573 | 5.0 | *EXPLOIT*
  https://vulners.com/zdt/1337DAY-ID-26574 | 5.0 | *EXPLOIT*
  https://vulners.com/cve/CVE-2019-0197 | 4.9 | 
