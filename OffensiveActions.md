@@ -154,7 +154,7 @@ The Red Team was able to penetrate both `Target 1` and `Target 2`, and retrieve 
       Identified wordpress installed through testing links on homepage; BLOG directs to  192.168.1.110/wordpress
       ![BLOG](/Images/BLOG_Target1.png)
       This page has a Log in link
-      ![loginURL](/Images/Login_URL_Target1.png)
+      ![loginURL](/Images/Login_URL_Target1.PNG)
       ![wp-login](/Images/wp-login_Target1.png)
       
       Run wpscan to enumerate users: 'wpscan --url http://192.168.1.110/wordpress --enumerate u'
@@ -167,14 +167,15 @@ The Red Team was able to penetrate both `Target 1` and `Target 2`, and retrieve 
       - (Common Weakness) CWE-260: Password in configuration file
       wp-config.php contained DB_NAME, DB_USER, DB_PASSWORD for root user in clear text
       ![wp-config.php]/images/wp-config_Target1.PNG
+      
     REMEDIATION: The principle of least privilege should be enforced.
       'chmod 600 /var/www/html/wordpress/wp-config.php'
     michael@target1:/user/bin$ 'mysql -u root -p'
-      ![mysql-login](/Images/mysql-login_Target1.png)
+      ![mysql-login](/Images/mysql-login_Target1.PNG)
     mysql login achieved - what can we find ?
       
     'show databases;'
-    ![databases](/Images/mysql-db_Target1.png)
+    ![databases](/Images/mysql-db_Target1.PNG)
     
     'show tables;'
     ![tables](/Images/mysql-tables_Target1.png)
