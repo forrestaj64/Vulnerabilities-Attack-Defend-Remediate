@@ -70,9 +70,9 @@ CVE REFERENCE | RATING | ISSUE IN BRIEF
  https://vulners.com/zdt/1337DAY-ID-33577 | 5.8 | Apache Httpd mod_rewrite - Open Redirects Vulnerability *EXPLOIT*
  https://vulners.com/cve/CVE-2016-5387 | 5.1 | might allow remote attackers to redirect an application’s outbound HTTP traffic 
  https://vulners.com/seebug/SSV:96537 | 5.0 | component processing of a request URL containing multiple consecutive slashes (‘/’) *EXPLOIT*
- https://vulners.com/metasploit/MSF:AUXILIARY/SCANNER/HTTP/APACHE_OPTIONSBLEED | 5.0 | *EXPLOIT*
- https://vulners.com/exploitpack/EXPLOITPACK:DAED9B9E8D259B28BF72FC7FDC4755A7 | 5.0 | *EXPLOIT*
- https://vulners.com/exploitpack/EXPLOITPACK:C8C256BE0BFF5FE1C0405CB0AA9C075D | 5.0 | *EXPLOIT*
+ https://vulners.com/metasploit/MSF:AUXILIARY/SCANNER/HTTP/APACHE_OPTIONSBLEED | 5.0 | HTTP OPTIONS method can leak Apache's server memory *EXPLOIT*
+ https://vulners.com/exploitpack/EXPLOITPACK:DAED9B9E8D259B28BF72FC7FDC4755A7 | 5.0 | mod_session_crypto - Padding Oracle *EXPLOIT*
+ https://vulners.com/exploitpack/EXPLOITPACK:C8C256BE0BFF5FE1C0405CB0AA9C075D | 5.0 | OPTIONS Memory Leak *EXPLOIT*
  https://vulners.com/cve/CVE-2020-9490 | 5.0 | a specially crafted value for the ‘Cache-Digest’ header could result in a crash
  https://vulners.com/cve/CVE-2020-1934 | 5.0 | HTTP OPTIONS method can leak Apache's server memory
  https://vulners.com/cve/CVE-2019-10081 | 5.0 | H2PushResource", could lead to an overwrite of memory in the pushing request’s pool, leading to crashes
