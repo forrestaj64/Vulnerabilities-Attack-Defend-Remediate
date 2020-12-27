@@ -13,7 +13,7 @@ This scan identifies the services below as potential points of entry:
  
 <b> nmap -v -sV -O 192.168.1.110 </b>
 
-- Target 1: List of Exposed Services
+- Target 1 Exposed Services
 
  PORT | STATE | SERVICE | VERSION
  ------------ | ------------- | ------------- | -------------
@@ -25,7 +25,7 @@ This scan identifies the services below as potential points of entry:
 
 <b> nmap -v -sV -O 192.168.1.115 </b>
 
-- Target 2: List of Exposed Services
+- Target 2 Exposed Services
 
  PORT | STATE | SERVICE | VERSION
   ------------ | ------------- | ------------- | -------------
@@ -45,7 +45,7 @@ Vulnerabilities were identified on each target using the following commands:
   
   Target 2 returned identical results to Target 1 
 
- <h4> Target 1 and Target 2: List of Critical Vulnerabilities </h4>
+ <h4> Table: Critical Vulnerabilities Target 1 and Target 2  </h4>
 
 cpe:/a:apache:http_server:2.4.10: 
 CVE REFERENCE | RATING | ISSUE IN BRIEF
@@ -128,21 +128,23 @@ The Red Team was able to penetrate both Target 1 and Target 2, and retrieve the 
 
 <h3>Target 1</h3>
   - flag1 hash value: `b9bbcd33e11b80be759c4e844862482d`
-      ![flag1](/Images/flag1-found_Target1.png)
+  
+      ![flag1](/Images/flag1-found_Target1.PNG)
       
     - **Exploit Used**
-      (Common Weakness) CWE-540: Inclusion of Sensitive Information in Source Code 
-      Click SERVICE link > 192.168.1.110/service.html, Right Click, View Source, flag1 is visible in a commented out line below the footer. 
+      - (Common Weakness) CWE-540: Inclusion of Sensitive Information in Source Code 
+      - Click SERVICE link > 192.168.1.110/service.html, Right Click, View Source, flag1 is visible in a commented out line below the footer. 
       
      REMEDIATION: Source code should be reviewed and all comments removed from production versions of code.
 
   - flag2 hash value: `fc3fd58dcdad9ab23faca6e9a36e581c`
+  
       ![flag2](/Images/flag2-found_Target1.PNG)
       
     - **Exploit Used**
-      (Common Weakness) CWE-521: Weak Password Requirements
-      an easily guessed password for user michael (ssh login),
-      michael@target1:/var/www/html/wordpress$ 'cat wp-config.php'
+      - (Common Weakness) CWE-521: Weak Password Requirements
+      - an easily guessed password for user michael (ssh login),
+      - michael@target1:/var/www/html/wordpress$ 'cat wp-config.php'
       
     REMEDIATION: Enforcement of password policy on the machine.
       install libpam- pwquality: <b>'sudo apt install libpam-pwquality'<\b>
@@ -163,12 +165,13 @@ The Red Team was able to penetrate both Target 1 and Target 2, and retrieve the 
       ![wpscan1b](/Images/WPScan_Target1b.PNG)
 
   - flag3 hash value: `afc01ab5650591e7dccf93122770cd2`
+  
       ![flag3](/Images/flag3-detail_Target1.png)
       
     - **Exploit Used**
-      (Common Weakness) CWE-260: Password in configuration file
-      wp-config.php contained DB_NAME, DB_USER, DB_PASSWORD for root user in clear text
-      ![wp-config.php]/images/wp-config_Target1.PNG
+      - (Common Weakness) CWE-260: Password in configuration file
+      - wp-config.php contained DB_NAME, DB_USER, DB_PASSWORD for root user in clear text
+      - ![wp-config.php]/images/wp-config_Target1.PNG
       
     REMEDIATION: The principle of least privilege should be enforced.
       'chmod 600 /var/www/html/wordpress/wp-config.php'
@@ -225,14 +228,15 @@ The Red Team was able to penetrate both Target 1 and Target 2, and retrieve the 
     Display the contents of flag4.txt
     ![flag4](/Images/flag4-detail_Target1.png)
 
-      - flag4 hash value: `715dea6c055b9fe3337544932f2941ce`
+   - flag4 hash value: `715dea6c055b9fe3337544932f2941ce`
+      
       ![found4](/Images/flag4-found_Target1.png)
       
-    - **Exploit Used**
-      (Common Weakness) CWE-250: Execution with Unnecessary Privileges
-      User steven has excessive privileges
+   - **Exploit Used**
+     - (Common Weakness) CWE-250: Execution with Unnecessary Privileges
+     - User steven has excessive privileges
       
-      ![excess-priv](/images/sudo-steven_Target1.PNG)
+      - ![excess-priv](/images/sudo-steven_Target1.PNG)
       
     REMEDIATION: The principle of least privilege should be enforced.
      Limit sudo to specific functions that require it, such as restarting a service that runs with root privilege
@@ -243,8 +247,8 @@ The Red Team was able to penetrate both Target 1 and Target 2, and retrieve the 
       ![found1-T2](/Images/flag1-found_Target2.png)
       
     - **Exploit Used**
-      (Common Weakness) CWE-548: Information leakage through directory listing
-      <b>'gobuster -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt dir -u 192.168.1.115'</b>
+      - Common Weakness) CWE-548: Information leakage through directory listing
+      - <b>'gobuster -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt dir -u 192.168.1.115'</b>
       
     ![gobuster](/Images/gobuster_Target2.png)
     
@@ -267,13 +271,13 @@ The Red Team was able to penetrate both Target 1 and Target 2, and retrieve the 
       ![found2-T2](/Images/flag2-found_Target2.PNG)
       
     - **Exploit Used**
-      (Common Weakness) CWE-78: Improper Sanitization of Special Elements used in an OS Command
-      <b>'192.168.1.115/backdoor.php?cmd=find+/var/www+-type+f+iname+'flag*''</b>    
-      ![findflags](/Images/find-flags_Target2.PNG)
+      - (Common Weakness) CWE-78: Improper Sanitization of Special Elements used in an OS Command
+      - <b>'192.168.1.115/backdoor.php?cmd=find+/var/www+-type+f+iname+'flag*''</b>    
+      - ![findflags](/Images/find-flags_Target2.PNG)
       
-       (The path to flag3 is also disclosed here)
+      - (The path to flag3 is also disclosed here)
 	   
-      <b>'192.168.1.115/backdoor.php?cmd=cat+/var/www/flag2.txt'</b>
+      - <b>'192.168.1.115/backdoor.php?cmd=cat+/var/www/flag2.txt'</b>
       
     REMEDIATION: Proper input controls within the application would prevent the execution of this exploit. 
      
@@ -295,8 +299,8 @@ The Red Team was able to penetrate both Target 1 and Target 2, and retrieve the 
      ![flag3-T2](/Images/flag3-found_Target2.PNG)
      
     - **Exploit Used**
-      (Common Weakness) CWE-522: Local file inclusion
-      <b>'192.168.1.115/wordpress/wp-content/uploads/2018/11/flag3.png'</b>
+      - (Common Weakness) CWE-522: Local file inclusion
+      - <b>'192.168.1.115/wordpress/wp-content/uploads/2018/11/flag3.png'</b>
       
       REMEDIATION: Proper access controls should be in place in the content areas.
        As this is sensitive information, an additional control to restrict access would be appropriate, such as data encrytion. 
