@@ -225,8 +225,11 @@ The Red Team was able to penetrate both `Target 1` and `Target 2`, and retrieve 
       - 'gobuster -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt dir -u 192.168.1.115'
     ![gobuster](/Images/gobuster_Target2.png)
     Browsing the directories discovered I found flag1 at 192.168.1.115/vendor/PATH (/var/www/html/vendor)
-    ![vendor]/(Images/vendor_Target2.png)
-    ![found1-T2](/Images/flag1-found_target2.png)
+    
+    ![vendor]/(Images/vendor_Target2.PNG)
+    
+    ![found1-T2](/Images/flag1-found_target2.PNG)
+    
     REMEDIATION: we should add line, "Options -Indexes" in .ht access (must be added in each folder) OR
        we can disable directory listing for a specified directory by adding this code in Apache Virtual Host
       <Directory /var/www/public_html>
@@ -234,12 +237,12 @@ The Red Team was able to penetrate both `Target 1` and `Target 2`, and retrieve 
       </Directory>
 
   - flag2 hash value: `6a8ed560f0b5358ecf844108048eb337`
-      ![found2-T2](/Images/flag2-found_Target2.png)
+      ![found2-T2](/Images/flag2-found_Target2.PNG)
     - **Exploit Used**
       - (Common Weakness) CWE-78: Improper Sanitization of Special Elements used in an OS Command
       - '192.168.1.115/backdoor.php?cmd=find+/var/www+-type+f+iname+'flag*''
       
-      ![findflags](/Images/find-flags_Target2.png)
+      ![findflags](/Images/find-flags_Target2.PNG)
       
            (the path to flag3 is also disclosed here)
 	   
