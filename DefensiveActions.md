@@ -73,7 +73,7 @@ Alert 3 is implemented as follows:
   - **Threshold**: 5 in last 1 minute
   - **Vulnerability Mitigated**: No login restrictions (open to brute force attacks)
   - **Reliability**: Medium, this alert generated no false positives for the period.
-    This alert should be tuned if it were triggered by valid logins,coinciding at the start of a shift for example.
+    This alert should be tuned if it were triggered by valid logins, coinciding at the start of a shift for example.
     
     ![BruteForceAlert](Images/Alert.BruteForce.png)
 
