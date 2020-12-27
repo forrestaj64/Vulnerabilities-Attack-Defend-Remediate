@@ -7,18 +7,11 @@
 
 <h2> 1. Exposed Services</h2>
 
-Nmap scan results for each machine reveal the below services and OS details:
-  <p> </p> 
-
-$ nmap -v -sV -O 192.168.1.110
-  ![nmapTarget1](/Images/nmap-vsVO_Target1.png)
-
-$ nmap  -v -sV -O 192.168.1.115
-  ![nmapTarget2](/Images/nmap-vsVO_Target2.png)
-
+Nmap scan results for each machine reveal services and OS details.
 
 This scan identifies the services below as potential points of entry:
-
+ 
+<b> nmap -v -sV -O 192.168.1.110 </b>
 - Target 1: List of Exposed Services
 
  PORT | STATE | SERVICE | VERSION
@@ -29,6 +22,7 @@ This scan identifies the services below as potential points of entry:
 139/tcp | open | netbios-ssn | Samba smbd 3.X - 4.X 
 445/tcp | open | netbios-ssn | Samba smbd 3.X - 4.X 
 
+<b> nmap -v -sV -O 192.168.1.115 </b>
 - Target 2: List of Exposed Services
 
  PORT | STATE | SERVICE | VERSION
@@ -39,9 +33,7 @@ This scan identifies the services below as potential points of entry:
 139/tcp | open | netbios-ssn | Samba smbd 3.X - 4.X 
 445/tcp | open | netbios-ssn | Samba smbd 3.X - 4.X 
 
-
 <h2>2. Critical Vulnerabilities</h2>
-
 
 The following vulnerabilities were identified on each target:
 
@@ -126,6 +118,7 @@ Target 2 returned identical results to Target 1
 
   <b>nmap --script vuln -sV -p80 192.168.1.115</b>
    ![nmapVulnTarget2](/Images/nmap-vuln_Target2.png)
+
 
 <h2>3. Exploitation Process</h2>
 
