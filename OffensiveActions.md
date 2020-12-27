@@ -50,8 +50,8 @@ The following vulnerabilities were identified on each target:
 cpe:/a:apache:http_server:2.4.10: 
 CVE | RATING | APACHE DETAIL | VULNERS.COM REFERENCE
  ------------ | ------------- | ------------- | -------------
- CVE-2020-11984 | 7.5 | mod_proxy_uwsgi info disclosure, possible Remote Code Execution | <a>Reference Link</a><a href="https://vulners.com/cve/CVE-2020-11984">
- CVE-2017-7679 | 7.5 | mod_mime buffer overread | <a>Reference Link</a><a href="https://vulners.com/cve/CVE-2017-7679">
+ <a>CVE-2020-11984</a><a href="https://vulners.com/cve/CVE-2020-11984"> | 7.5 | mod_proxy_uwsgi info disclosure, possible Remote Code Execution | xx
+ <a>CVE-2017-7679</a> <a href="https://vulners.com/cve/CVE-2017-7679"> | 7.5 | mod_mime buffer overread | xx
  CVE-2017-7668 | 7.5 | a bug in token list parsing | https://vulners.com/cve/CVE-2017-7668
  CVE-2017-3169 | 7.5 | mod_ssl may dereference a NULL pointer | https://vulners.com/cve/CVE-2017-3169
  CVE-2017-3167 | 7.5 | may lead to authentication requirements being bypassed | https://vulners.com/cve/CVE-2017-3167
