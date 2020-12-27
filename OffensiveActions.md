@@ -1,20 +1,20 @@
 <h1>Red Team: Summary of Operations</h1>
 
 <h2> Table of Contents</h3>
-<p> Exposed Services </p> 
-<p> Critical Vulnerabilities </p> 
-<p> Exploitation Process </p> 
+<p> 1. Exposed Services </p> 
+<p> 2. Critical Vulnerabilities </p> 
+<p> 3. Exploitation Process </p> 
 
-<h2> Exposed Services</h2>
+<h2> 1. Exposed Services</h2>
 
 Nmap scan results for each machine reveal the below services and OS details:
   <p> </p> 
 
 $ nmap -v -sV -O 192.168.1.110
-  ![nmapTarget1]/images/nmap-vsVO_Target1.txt
+  ![nmapTarget1]/images/nmap-vsVO_Target1.png
 
 $ nmap  -v -sV -O 192.168.1.115
-  ![nmapTarget2]/images/nmap-vsVO_Target2.txt
+  ![nmapTarget2]/images/nmap-vsVO_Target2.png
 
 
 This scan identifies the services below as potential points of entry:
@@ -40,7 +40,7 @@ This scan identifies the services below as potential points of entry:
 445/tcp | open | netbios-ssn | Samba smbd 3.X - 4.X 
 
 
-<h2>Critical Vulnerabilities</h2>
+<h2>2. Critical Vulnerabilities</h2>
 
 
 The following vulnerabilities were identified on each target:
@@ -127,7 +127,7 @@ Target 2 returned identical results to Target 1
   <b>nmap --script vuln -sV -p80 192.168.1.115</b>
    ![nmapVulnTarget2](/Images/nmap_vuln_Target2.txt)
 
-<h2>Exploitation Process</h2>
+<h2>3. Exploitation Process</h2>
 
 
 The Red Team was able to penetrate both `Target 1` and `Target 2`, and retrieve the following confidential data:
