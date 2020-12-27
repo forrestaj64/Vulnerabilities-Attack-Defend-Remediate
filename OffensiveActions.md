@@ -119,12 +119,12 @@ cpe:/a:apache:http_server:2.4.10:
  1337DAY-ID-1161 0.0     https://vulners.com/zdt/1337DAY-ID-1161 *EXPLOIT*
 
   # nmap --script vuln -sV -p80 192.168.1.110
-   ![nmapVulnTarget1](/Images/nmap_vuln_Target1.png)
+   ![nmapVulnTarget1](/Images/nmap_vuln_Target1.txt)
 
 Target 2 returned identical results to Target 1 
 
   # nmap --script vuln -sV -p80 192.168.1.115
-   ![nmapVulnTarget2](/Images/nmap_vuln_Target2.png)
+   ![nmapVulnTarget2](/Images/nmap_vuln_Target2.txt)
 
 ### Exploitation Process
 
