@@ -48,7 +48,7 @@ The following vulnerabilities were identified on each target:
  <h4> Target 1 and Target 2: List of Critical Vulnerabilities </h4>
 
 cpe:/a:apache:http_server:2.4.10: 
-CVE REFERENCE | RATING | APACHE DETAIL 
+CVE REFERENCE | RATING | IN BRIEF
  ------------ | ------------- | ------------- 
  https://vulners.com/cve/CVE-2020-11984 | 7.5 | mod_proxy_uwsgi info disclosure, possible Remote Code Execution
  https://vulners.com/cve/CVE-2017-7679 | 7.5 | mod_mime buffer overread
