@@ -11,10 +11,10 @@ Nmap scan results for each machine reveal the below services and OS details:
   <p> </p> 
 
 $ nmap -v -sV -O 192.168.1.110
-  ![nmapTarget1]/images/nmap-vsVO_Target1.png
+  ![nmapTarget1](/Images/nmap-vsVO_Target1.png)
 
 $ nmap  -v -sV -O 192.168.1.115
-  ![nmapTarget2]/images/nmap-vsVO_Target2.png
+  ![nmapTarget2](/Images/nmap-vsVO_Target2.png)
 
 
 This scan identifies the services below as potential points of entry:
@@ -120,12 +120,12 @@ CVE REFERENCE | RATING | ISSUE IN BRIEF
  https://vulners.com/zdt/1337DAY-ID-1161 | 0.0 | (upload/xss) Multiple Remote Vulnerabilities *EXPLOIT*
 
   <b>nmap --script vuln -sV -p80 192.168.1.110</b>
-   ![nmapVulnTarget1](/Images/nmap_vuln_Target1.txt)
+   ![nmapVulnTarget1](/Images/nmap-vuln_Target1.png)
 
 Target 2 returned identical results to Target 1 
 
   <b>nmap --script vuln -sV -p80 192.168.1.115</b>
-   ![nmapVulnTarget2](/Images/nmap_vuln_Target2.txt)
+   ![nmapVulnTarget2](/Images/nmap-vuln_Target2.png)
 
 <h2>3. Exploitation Process</h2>
 
