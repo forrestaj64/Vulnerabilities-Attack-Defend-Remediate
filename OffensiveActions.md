@@ -1,11 +1,11 @@
-# Red Team: Summary of Operations
+<h1># Red Team: Summary of Operations</h1>
 
-## Table of Contents
+<h3>## Table of Contents</h3>
 - Exposed Services
 - Critical Vulnerabilities
 - Exploitation Process
 
-### Exposed Services
+<h2> Exposed Services</h2>
 
 Nmap scan results for each machine reveal the below services and OS details:
 
@@ -36,7 +36,8 @@ This scan identifies the services below as potential points of entry:
 139/tcp | open | netbios-ssn | Samba smbd 3.X - 4.X 
 445/tcp | open | netbios-ssn | Samba smbd 3.X - 4.X 
 
-### Critical Vulnerabilities
+
+<h2>Critical Vulnerabilities</h2>
 
 
 The following vulnerabilities were identified on each target:
@@ -123,7 +124,7 @@ Target 2 returned identical results to Target 1
   # nmap --script vuln -sV -p80 192.168.1.115
    ![nmapVulnTarget2](/Images/nmap_vuln_Target2.txt)
 
-### Exploitation Process
+<h2>Exploitation Process</h2>
 
 
 The Red Team was able to penetrate both `Target 1` and `Target 2`, and retrieve the following confidential data:
@@ -245,8 +246,9 @@ The Red Team was able to penetrate both `Target 1` and `Target 2`, and retrieve 
     
     ![found1-T2](/Images/flag1-found_target2.PNG)
     
-    REMEDIATION: Disable directory listing; in .ht access (must be added in each folder) we should add line, "Options -Indexes" OR
-       we can disable directory listing for a specified directory by adding this code in Apache Virtual Host
+    REMEDIATION: Disable directory listing.
+    	In .ht access (must be added in each folder) we should add line, "Options -Indexes" OR
+      	we can disable directory listing for a specified directory by adding this code in Apache Virtual Host
        
       <Directory /var/www/public_html>
           Options -Indexes
