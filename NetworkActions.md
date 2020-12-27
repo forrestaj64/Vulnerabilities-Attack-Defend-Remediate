@@ -29,7 +29,7 @@ june11.dll
 4. Upload the file to [VirusTotal.com](https://www.virustotal.com/gui/) What kind of malware is this classified as?
 
 Malware Trojan
-![malware]/Images/trojan.PNG
+![malware](/Images/trojan.PNG)
 
 
 #### Vulnerable Windows Machines
@@ -58,7 +58,7 @@ matthijs.devries
 
 4. As a bonus, retrieve the desktop background of the Windows host.
 
-![background]/images/seagull_flying.PNG
+![background](/Images/seagull_flying.PNG)
 
 
 #### Illegal Downloads
@@ -82,6 +82,7 @@ Your task is to isolate torrent traffic and answer the following questions:
 2. Which torrent file did the user download?
 
   "Betty_Boop_Rhythm_on_the_Reservation.avi"
-![torrent]/Images/Betty_Boop_avi_inline.PNG
----
+![torrent](/Images/Betty_Boop_avi_inline.PNG)
+
+
 
