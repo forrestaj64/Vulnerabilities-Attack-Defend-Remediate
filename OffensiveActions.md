@@ -175,20 +175,23 @@ The Red Team was able to penetrate both `Target 1` and `Target 2`, and retrieve 
     mysql login achieved - what can we find ?
       
     'show databases;'
+    
     ![databases](/Images/mysql-db_Target1.PNG)
     
     'show tables;'
-    ![tables](/Images/mysql-tables_Target1.png)
+    
+    ![tables](/Images/mysql-tables_Target1.PNG)
     
     'describe wp_posts;'
-    ![posts](/Images/mysql-wp_posts_Target1.png)
+    
+    ![posts](/Images/mysql-wp_posts_Target1.PNG)
     
     I noted that the default value for post_status = 'publish'
     'select * FROM wp_posts WHERE post_status != 'publish''
     ![user-passwd](/Images/mysql-user-login-pass_Target1.png)
     
     'show tables;'
-    ![tables](/images/mysql-tables_Target1.png)
+    ![tables](/images/mysql-tables_Target1.PNG)
     
     'describe wp_users;'
     ![wp-users](/Images/mysql-wp_users_Target1.png)
