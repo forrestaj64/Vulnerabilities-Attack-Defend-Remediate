@@ -8,7 +8,7 @@
 - Suggestions for Going Further
 
 ### Network Topology
-![network diagram] (./images/Major-Project-Diagram-Final.PNG)
+![network diagram](/images/Major-Project-Diagram-Final.png)
 
 The following machines were identified on the network:
 - Capstone
