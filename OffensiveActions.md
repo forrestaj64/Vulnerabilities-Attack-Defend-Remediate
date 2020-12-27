@@ -158,14 +158,13 @@ The Red Team was able to penetrate both `Target 1` and `Target 2`, and retrieve 
       Identified wordpress installed through testing links on homepage; BLOG directs to  192.168.1.110/wordpress
       ![BLOG](/Images/BLOG_Target1.png)
       This page has a Log in link
-      ![loginURL](/Images/Login_URL_Target1.PNG)
+      ![loginURL](/Images/Login_URL_Target1.png)
       ![wp-login](/Images/wp-login_Target1.png)
       
       Run wpscan to enumerate users: <b>'wpscan --url http://192.168.1.110/wordpress --enumerate u'<\b>
       
       ![wpscan1a](/Images/WPScan_Target1a.PNG)
-      
-      ![wpscan1b]/Images/WPScan_Target1b.PNG)
+      ![wpscan1b](/Images/WPScan_Target1b.PNG)
 
   - flag3 hash value: `afc01ab5650591e7dccf93122770cd2`
       ![flag3](/Images/flag3-detail_Target1.png)
