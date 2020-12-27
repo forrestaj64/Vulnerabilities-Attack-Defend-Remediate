@@ -48,76 +48,76 @@ The following vulnerabilities were identified on each target:
  <h4> Target 1 and Target 2: List of Critical Vulnerabilities </h4>
 
 cpe:/a:apache:http_server:2.4.10: 
-CVE | RATING | APACHE DETAIL | VULNERS.COM REFERENCE
- ------------ | ------------- | ------------- | -------------
- <a>CVE-2020-11984</a><a href="https://vulners.com/cve/CVE-2020-11984"> | 7.5 | mod_proxy_uwsgi info disclosure, possible Remote Code Execution | xx
- <a>CVE-2017-7679</a> <a href="https://vulners.com/cve/CVE-2017-7679"> | 7.5 | mod_mime buffer overread | xx
- CVE-2017-7668 | 7.5 | a bug in token list parsing | https://vulners.com/cve/CVE-2017-7668
- CVE-2017-3169 | 7.5 | mod_ssl may dereference a NULL pointer | https://vulners.com/cve/CVE-2017-3169
- CVE-2017-3167 | 7.5 | may lead to authentication requirements being bypassed | https://vulners.com/cve/CVE-2017-3167
- EXPLOITPACK:44C5118F831D55FAF4259C41D8BDA0AB | 7.2 | apache2ctl graceful logrotate Local Privilege Escalation | https://vulners.com/exploitpack/EXPLOITPACK:44C5118F831D55FAF4259C41D8BDA0AB | *EXPLOIT*
- CVE-2019-0211 | 7.2 | privilege escalation from modules' scripts | https://vulners.com/cve/CVE-2019-0211
- 1337DAY-ID-32502 | 7.2 | apache2ctl graceful logrotate Local Privilege Escalation | https://vulners.com/zdt/1337DAY-ID-32502 *EXPLOIT*
- CVE-2018-1312 | 6.8 | Weak Digest auth nonce generation in mod_auth_digest | https://vulners.com/cve/CVE-2018-1312
- CVE-2017-15715 | 6.8 | <FilesMatch> bypass with a trailing newline in the file name | https://vulners.com/cve/CVE-2017-15715
- CVE-2019-10082 | 6.4 | http/2 session handling could be made to read memory after being freed, during connection shutdown | https://vulners.com/cve/CVE-2019-10082
- CVE-2017-9788 | 6.4 | could reflect the stale value of uninitialized pool memory used by the prior request | https://vulners.com/cve/CVE-2017-9788
- CVE-2019-10097 | 6.0 | https://vulners.com/cve/CVE-2019-10097
- CVE-2019-0217 | 6.0 | https://vulners.com/cve/CVE-2019-0217
- EDB-ID:47689 | 5.8 | https://vulners.com/exploitdb/EDB-ID:47689 *EXPLOIT*
- CVE-2020-1927 | 5.8 | https://vulners.com/cve/CVE-2020-1927
- CVE-2019-10098 | 5.8 | https://vulners.com/cve/CVE-2019-10098
- 1337DAY-ID-33577 | 5.8 | https://vulners.com/zdt/1337DAY-ID-33577 *EXPLOIT*
- CVE-2016-5387 | 5.1 | https://vulners.com/cve/CVE-2016-5387
- SSV:96537 | 5.0 | https://vulners.com/seebug/SSV:96537 *EXPLOIT*
- MSF:AUXILIARY/SCANNER/HTTP/APACHE_OPTIONSBLEED | 5.0 | https://vulners.com/metasploit/MSF:AUXILIARY/SCANNER/HTTP/APACHE_OPTIONSBLEED *EXPLOIT*
- EXPLOITPACK:DAED9B9E8D259B28BF72FC7FDC4755A7 | 5.0 | https://vulners.com/exploitpack/EXPLOITPACK:DAED9B9E8D259B28BF72FC7FDC4755A7 *EXPLOIT*
- EXPLOITPACK:C8C256BE0BFF5FE1C0405CB0AA9C075D | 5.0 | https://vulners.com/exploitpack/EXPLOITPACK:C8C256BE0BFF5FE1C0405CB0AA9C075D *EXPLOIT*
- CVE-2020-9490 | 5.0 | https://vulners.com/cve/CVE-2020-9490
- CVE-2020-1934 | 5.0 | https://vulners.com/cve/CVE-2020-1934
- CVE-2019-10081 | 5.0 | https://vulners.com/cve/CVE-2019-10081
- CVE-2019-0220 | 5.0 | https://vulners.com/cve/CVE-2019-0220
- CVE-2019-0196 | 5.0 | https://vulners.com/cve/CVE-2019-0196
- CVE-2018-17199 | 5.0 | https://vulners.com/cve/CVE-2018-17199
- CVE-2018-17189 | 5.0 | https://vulners.com/cve/CVE-2018-17189
- CVE-2018-1333 | 5.0 | https://vulners.com/cve/CVE-2018-1333
- CVE-2018-1303 | 5.0 | https://vulners.com/cve/CVE-2018-1303
- CVE-2017-9798 | 5.0 | https://vulners.com/cve/CVE-2017-9798
- CVE-2017-15710 | 5.0 | https://vulners.com/cve/CVE-2017-15710
- CVE-2016-8743 | 5.0 | https://vulners.com/cve/CVE-2016-8743
- CVE-2016-2161 | 5.0 | https://vulners.com/cve/CVE-2016-2161
- CVE-2016-0736 | 5.0 | https://vulners.com/cve/CVE-2016-0736
- CVE-2015-3183 | 5.0 | https://vulners.com/cve/CVE-2015-3183
- CVE-2015-0228 | 5.0 | https://vulners.com/cve/CVE-2015-0228
- CVE-2014-3583 | 5.0 | https://vulners.com/cve/CVE-2014-3583
- 1337DAY-ID-28573 | 5.0 | https://vulners.com/zdt/1337DAY-ID-28573 *EXPLOIT*
- 1337DAY-ID-26574 | 5.0 | https://vulners.com/zdt/1337DAY-ID-26574 *EXPLOIT*
- CVE-2019-0197 | 4.9 | https://vulners.com/cve/CVE-2019-0197
- EDB-ID:47688 | 4.3 | https://vulners.com/exploitdb/EDB-ID:47688 *EXPLOIT*
- CVE-2020-11993 | 4.3 | https://vulners.com/cve/CVE-2020-11993
- CVE-2020-11985 | 4.3 | https://vulners.com/cve/CVE-2020-11985
- CVE-2019-10092 | 4.3 | https://vulners.com/cve/CVE-2019-10092
- CVE-2018-1302 | 4.3 | https://vulners.com/cve/CVE-2018-1302
- CVE-2018-1301 | 4.3 | https://vulners.com/cve/CVE-2018-1301
- CVE-2018-11763 | 4.3 | https://vulners.com/cve/CVE-2018-11763
- CVE-2016-4975 | 4.3 | https://vulners.com/cve/CVE-2016-4975
- CVE-2015-3185 | 4.3 | https://vulners.com/cve/CVE-2015-3185
- CVE-2014-8109 | 4.3 | https://vulners.com/cve/CVE-2014-8109
- 1337DAY-ID-33575 | 4.3 | https://vulners.com/zdt/1337DAY-ID-33575 *EXPLOIT*
- CVE-2018-1283 | 3.5 | https://vulners.com/cve/CVE-2018-1283
- CVE-2016-8612 | 3.3 | https://vulners.com/cve/CVE-2016-8612
- PACKETSTORM:152441 | 0.0 | *EXPLOIT*
- PACKETSTORM:140265 | 0.0 | https://vulners.com/packetstorm/PACKETSTORM:140265 *EXPLOIT*
- EDB-ID:46676 | 0.0 | https://vulners.com/exploitdb/EDB-ID:46676 *EXPLOIT*
- EDB-ID:42745 | 0.0 | https://vulners.com/exploitdb/EDB-ID:42745 *EXPLOIT*
- EDB-ID:40961 | 0.0 | https://vulners.com/exploitdb/EDB-ID:40961 *EXPLOIT*
- 1337DAY-ID-663 | 0.0 | https://vulners.com/zdt/1337DAY-ID-663 *EXPLOIT*
- 1337DAY-ID-601 | 0.0 | https://vulners.com/zdt/1337DAY-ID-601 *EXPLOIT*
- 1337DAY-ID-4533 | 0.0 | https://vulners.com/zdt/1337DAY-ID-4533 *EXPLOIT*
- 1337DAY-ID-3109 | 0.0 | https://vulners.com/zdt/1337DAY-ID-3109 *EXPLOIT*
- 1337DAY-ID-2237 | 0.0 | https://vulners.com/zdt/1337DAY-ID-2237 *EXPLOIT*
- 1337DAY-ID-1415 | 0.0 | https://vulners.com/zdt/1337DAY-ID-1415 *EXPLOIT*
- 1337DAY-ID-1161 | 0.0 | https://vulners.com/zdt/1337DAY-ID-1161 *EXPLOIT*
+CVE REFERENCE | RATING | APACHE DETAIL 
+ ------------ | ------------- | ------------- 
+ https://vulners.com/cve/CVE-2020-11984 | 7.5 | mod_proxy_uwsgi info disclosure, possible Remote Code Execution
+ https://vulners.com/cve/CVE-2017-7679 | 7.5 | mod_mime buffer overread
+ https://vulners.com/cve/CVE-2017-7668 | 7.5 | a bug in token list parsing
+ https://vulners.com/cve/CVE-2017-3169 | 7.5 | mod_ssl may dereference a NULL pointer
+ https://vulners.com/cve/CVE-2017-3167 | 7.5 | may lead to authentication requirements being bypassed
+ https://vulners.com/exploitpack/EXPLOITPACK:44C5118F831D55FAF4259C41D8BDA0AB  | 7.2 | apache2ctl graceful logrotate Local Privilege Escalation *EXPLOIT*
+ https://vulners.com/cve/CVE-2019-0211 | 7.2 | privilege escalation from modules' scripts
+ https://vulners.com/zdt/1337DAY-ID-32502 | 7.2 | apache2ctl graceful logrotate Local Privilege Escalation *EXPLOIT*
+ https://vulners.com/cve/CVE-2018-1312 | 6.8 | Weak Digest auth nonce generation in mod_auth_digest
+ https://vulners.com/cve/CVE-2017-15715 | 6.8 | <FilesMatch> bypass with a trailing newline in the file name
+ https://vulners.com/cve/CVE-2019-10082 | 6.4 | http/2 session handling could be made to read memory after being freed, during connection shutdown
+ https://vulners.com/cve/CVE-2017-9788 | 6.4 | could reflect the stale value of uninitialized pool memory used by the prior request
+ https://vulners.com/cve/CVE-2019-10097 | 6.0 | 
+ https://vulners.com/cve/CVE-2019-0217 | 6.0 | 
+ https://vulners.com/exploitdb/EDB-ID:47689 | 5.8 |  *EXPLOIT*
+ https://vulners.com/cve/CVE-2020-1927 | 5.8 | 
+ https://vulners.com/cve/CVE-2019-10098 | 5.8 | 
+ https://vulners.com/zdt/1337DAY-ID-33577 | 5.8 | *EXPLOIT*
+ https://vulners.com/cve/CVE-2016-5387 | 5.1 | 
+ https://vulners.com/seebug/SSV:96537 | 5.0 | *EXPLOIT*
+ https://vulners.com/metasploit/MSF:AUXILIARY/SCANNER/HTTP/APACHE_OPTIONSBLEED | 5.0 | *EXPLOIT*
+ https://vulners.com/exploitpack/EXPLOITPACK:DAED9B9E8D259B28BF72FC7FDC4755A7 | 5.0 | *EXPLOIT*
+ https://vulners.com/exploitpack/EXPLOITPACK:C8C256BE0BFF5FE1C0405CB0AA9C075D | 5.0 | *EXPLOIT*
+ https://vulners.com/cve/CVE-2020-9490 | 5.0 | 
+ https://vulners.com/cve/CVE-2020-1934 | 5.0 | 
+ https://vulners.com/cve/CVE-2019-10081 | 5.0 |
+ https://vulners.com/cve/CVE-2019-0220 | 5.0 | 
+ https://vulners.com/cve/CVE-2019-0196 | 5.0 | 
+ https://vulners.com/cve/CVE-2018-17199 | 5.0 | 
+ https://vulners.com/cve/CVE-2018-17189 | 5.0 |
+ https://vulners.com/cve/CVE-2018-1333 | 5.0 | 
+ https://vulners.com/cve/CVE-2018-1303 | 5.0 | 
+ https://vulners.com/cve/CVE-2017-9798 | 5.0 | 
+ https://vulners.com/cve/CVE-2017-15710 | 5.0 | 
+ https://vulners.com/cve/CVE-2016-8743 | 5.0 | 
+ https://vulners.com/cve/CVE-2016-2161 | 5.0 | 
+ https://vulners.com/cve/CVE-2016-0736| 5.0 | 
+ https://vulners.com/cve/CVE-2015-3183 | 5.0 | 
+ https://vulners.com/cve/CVE-2015-0228 | 5.0 | 
+ https://vulners.com/cve/CVE-2014-3583 | 5.0 | 
+ https://vulners.com/zdt/1337DAY-ID-28573 | 5.0 | *EXPLOIT*
+ https://vulners.com/zdt/1337DAY-ID-26574 | 5.0 | *EXPLOIT*
+ https://vulners.com/cve/CVE-2019-0197 | 4.9 | 
+ https://vulners.com/exploitdb/EDB-ID:47688 | 4.3 | *EXPLOIT*
+ https://vulners.com/cve/CVE-2020-11993 | 4.3 | 
+ https://vulners.com/cve/CVE-2020-11985 | 4.3 | 
+ https://vulners.com/cve/CVE-2019-10092 | 4.3 | 
+ https://vulners.com/cve/CVE-2018-1302 | 4.3 | 
+ https://vulners.com/cve/CVE-2018-1301 | 4.3 | 
+ https://vulners.com/cve/CVE-2018-11763 | 4.3 | 
+ https://vulners.com/cve/CVE-2016-4975 | 4.3 | 
+ https://vulners.com/cve/CVE-2015-3185 | 4.3 | 
+ https://vulners.com/cve/CVE-2014-8109 | 4.3 | 
+ https://vulners.com/zdt/1337DAY-ID-33575 | 4.3 | *EXPLOIT*
+ https://vulners.com/cve/CVE-2018-1283 | 3.5 | 
+ https://vulners.com/cve/CVE-2016-8612 | 3.3 | 
+ https://vulners.com/packetstorm/PACKETSTORM:152441 | 0.0 | *EXPLOIT*
+ https://vulners.com/packetstorm/PACKETSTORM:140265 | 0.0 | *EXPLOIT*
+ https://vulners.com/exploitdb/EDB-ID:46676 | 0.0 | *EXPLOIT*
+ https://vulners.com/exploitdb/EDB-ID:42745 | 0.0 | *EXPLOIT*
+ https://vulners.com/exploitdb/EDB-ID:40961 | 0.0 | *EXPLOIT*
+ https://vulners.com/zdt/1337DAY-ID-663 | 0.0 | *EXPLOIT*
+ https://vulners.com/zdt/1337DAY-ID-601 | 0.0 | *EXPLOIT*
+ https://vulners.com/zdt/1337DAY-ID-4533 | 0.0 | *EXPLOIT*
+ https://vulners.com/zdt/1337DAY-ID-3109 | 0.0 |  *EXPLOIT*
+ https://vulners.com/zdt/1337DAY-ID-2237 | 0.0 | *EXPLOIT*
+ https://vulners.com/zdt/1337DAY-ID-1415 | 0.0 | *EXPLOIT*
+ https://vulners.com/zdt/1337DAY-ID-1161 | 0.0 | *EXPLOIT*
 
   <b>nmap --script vuln -sV -p80 192.168.1.110</b>
    ![nmapVulnTarget1](/Images/nmap_vuln_Target1.txt)
