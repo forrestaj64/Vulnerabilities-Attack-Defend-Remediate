@@ -139,7 +139,7 @@ The Red Team was able to penetrate both `Target 1` and `Target 2`, and retrieve 
      REMEDIATION: Source code should be reviewed and all comments removed from production versions of code.
 
   - flag2 hash value: `fc3fd58dcdad9ab23faca6e9a36e581c`
-      ![flag2](/Images/flag2-found_Target1.png)
+      ![flag2](/Images/flag2-found_Target1.PNG)
     - **Exploit Used**
       - (Common Weakness) CWE-521: Weak Password Requirements
       - an easily guessed password for user michael (ssh login),
