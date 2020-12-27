@@ -1,24 +1,26 @@
 <h1>Red Team: Summary of Operations</h1>
 
 <h2> Table of Contents</h3>
-- Exposed Services
-- Critical Vulnerabilities
-- Exploitation Process
+<p> Exposed Services </p> 
+<p> Critical Vulnerabilities </p> 
+<p> Exploitation Process </p> 
 
 <h2> Exposed Services</h2>
 
 Nmap scan results for each machine reveal the below services and OS details:
+  <p> </p> 
 
-```bash
 $ nmap -v -sV -O 192.168.1.110
   ![nmapTarget1]/images/nmap-vsVO_Target1.txt
 
 $ nmap  -v -sV -O 192.168.1.115
   ![nmapTarget2]/images/nmap-vsVO_Target2.txt
-```
+
 
 This scan identifies the services below as potential points of entry:
+
 - Target 1: List of Exposed Services
+
  PORT | STATE | SERVICE | VERSION
  ------------ | ------------- | ------------- | -------------
 22/tcp | open | ssh | OpenSSH 6.7p1 Debian 5+deb8u4 (protocol 2.0)
@@ -28,6 +30,7 @@ This scan identifies the services below as potential points of entry:
 445/tcp | open | netbios-ssn | Samba smbd 3.X - 4.X 
 
 - Target 2: List of Exposed Services
+
  PORT | STATE | SERVICE | VERSION
   ------------ | ------------- | ------------- | -------------
 22/tcp | open | ssh | OpenSSH 6.7p1 Debian 5+deb8u4 (protocol 2.0)
@@ -41,12 +44,11 @@ This scan identifies the services below as potential points of entry:
 
 
 The following vulnerabilities were identified on each target:
-- Target 1
 
-  - List of Critical Vulnerabilities
+ <h4> Target 1 and Target 2: List of Critical Vulnerabilities </h4>
 
 cpe:/a:apache:http_server:2.4.10: 
-CVE | RATING | APACHE DETAIL | VULNERS REFERENCE
+CVE | RATING | APACHE DETAIL | VULNERS.COM REFERENCE
  ------------ | ------------- | ------------- | -------------
  CVE-2020-11984 | 7.5 | mod_proxy_uwsgi info disclosure and possible Remote Code Execution | https://vulners.com/cve/CVE-2020-11984
  CVE-2017-7679 | 7.5 | mod_mime buffer overread | https://vulners.com/cve/CVE-2017-7679
@@ -100,7 +102,7 @@ CVE | RATING | APACHE DETAIL | VULNERS REFERENCE
  CVE-2018-11763 | 4.3 | https://vulners.com/cve/CVE-2018-11763
  CVE-2016-4975 | 4.3 | https://vulners.com/cve/CVE-2016-4975
  CVE-2015-3185 | 4.3 | https://vulners.com/cve/CVE-2015-3185
- CVE-2014-8109   4.3 | https://vulners.com/cve/CVE-2014-8109
+ CVE-2014-8109 | 4.3 | https://vulners.com/cve/CVE-2014-8109
  1337DAY-ID-33575 | 4.3 | https://vulners.com/zdt/1337DAY-ID-33575 *EXPLOIT*
  CVE-2018-1283 | 3.5 | https://vulners.com/cve/CVE-2018-1283
  CVE-2016-8612 | 3.3 | https://vulners.com/cve/CVE-2016-8612
@@ -129,7 +131,8 @@ Target 2 returned identical results to Target 1
 
 
 The Red Team was able to penetrate both `Target 1` and `Target 2`, and retrieve the following confidential data:
-- Target 1
+
+<h3>Target 1</h3>
   - flag1 hash value: `b9bbcd33e11b80be759c4e844862482d`
       ![flag1](/Images/flag1-found_Target1.png)
     - **Exploit Used**
@@ -235,7 +238,7 @@ The Red Team was able to penetrate both `Target 1` and `Target 2`, and retrieve 
      Limit sudo to specific functions that require it, such as restarting a service that runs with root privilege
      We need to run visudo to edit /etc/sudoers or add specific config under the /etc/sudoers.d directory
 
-- Target 2
+<h3>Target 2</h3>
   - flag1 hash value: `a2c1f66d2b8051db3a5874b5874b5b6e43e21`
       ![found1-T2](/Images/flag1-found_Target2.png)
     - **Exploit Used**
@@ -264,13 +267,13 @@ The Red Team was able to penetrate both `Target 1` and `Target 2`, and retrieve 
       - '192.168.1.115/backdoor.php?cmd=find+/var/www+-type+f+iname+'flag*''      
       ![findflags](/Images/find-flags_Target2.PNG)
       
-           (The path to flag3 is also disclosed here)
+       (The path to flag3 is also disclosed here)
 	   
       - '192.168.1.115/backdoor.php?cmd=cat+/var/www/flag2.txt'
       
     REMEDIATION: Proper input controls within the application would prevent the execution of this exploit. 
      
-     Establishing the backdoor;
+     <h4>Establishing the backdoor;</h4>
      The script provided was edited to include the IP of target2
      exploit.sh generates backdoor.php on the target, encoded with functions to allow command injection 
      
