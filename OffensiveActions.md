@@ -90,34 +90,34 @@ CVE REFERENCE | RATING | ISSUE IN BRIEF
  https://vulners.com/cve/CVE-2015-3183 | 5.0 | modules/http/http_filters.c allows remote attackers to conduct HTTP request smuggling attacks via a crafted request
  https://vulners.com/cve/CVE-2015-0228 | 5.0 | remote attackers to cause a denial of service (child-process crash) by sending a crafted WebSocket Ping 
  https://vulners.com/cve/CVE-2014-3583 | 5.0 | handle_headers function (buffer over-read and daemon crash) via long response headers
- https://vulners.com/zdt/1337DAY-ID-28573 | 5.0 | *EXPLOIT*
- https://vulners.com/zdt/1337DAY-ID-26574 | 5.0 | *EXPLOIT*
- https://vulners.com/cve/CVE-2019-0197 | 4.9 | 
- https://vulners.com/exploitdb/EDB-ID:47688 | 4.3 | *EXPLOIT*
- https://vulners.com/cve/CVE-2020-11993 | 4.3 | 
- https://vulners.com/cve/CVE-2020-11985 | 4.3 | 
- https://vulners.com/cve/CVE-2019-10092 | 4.3 | 
- https://vulners.com/cve/CVE-2018-1302 | 4.3 | 
- https://vulners.com/cve/CVE-2018-1301 | 4.3 | 
- https://vulners.com/cve/CVE-2018-11763 | 4.3 | 
- https://vulners.com/cve/CVE-2016-4975 | 4.3 | 
- https://vulners.com/cve/CVE-2015-3185 | 4.3 | 
- https://vulners.com/cve/CVE-2014-8109 | 4.3 | 
- https://vulners.com/zdt/1337DAY-ID-33575 | 4.3 | *EXPLOIT*
- https://vulners.com/cve/CVE-2018-1283 | 3.5 | 
- https://vulners.com/cve/CVE-2016-8612 | 3.3 | 
- https://vulners.com/packetstorm/PACKETSTORM:152441 | 0.0 | *EXPLOIT*
- https://vulners.com/packetstorm/PACKETSTORM:140265 | 0.0 | *EXPLOIT*
- https://vulners.com/exploitdb/EDB-ID:46676 | 0.0 | *EXPLOIT*
- https://vulners.com/exploitdb/EDB-ID:42745 | 0.0 | *EXPLOIT*
- https://vulners.com/exploitdb/EDB-ID:40961 | 0.0 | *EXPLOIT*
- https://vulners.com/zdt/1337DAY-ID-663 | 0.0 | *EXPLOIT*
- https://vulners.com/zdt/1337DAY-ID-601 | 0.0 | *EXPLOIT*
- https://vulners.com/zdt/1337DAY-ID-4533 | 0.0 | *EXPLOIT*
- https://vulners.com/zdt/1337DAY-ID-3109 | 0.0 |  *EXPLOIT*
- https://vulners.com/zdt/1337DAY-ID-2237 | 0.0 | *EXPLOIT*
- https://vulners.com/zdt/1337DAY-ID-1415 | 0.0 | *EXPLOIT*
- https://vulners.com/zdt/1337DAY-ID-1161 | 0.0 | *EXPLOIT*
+ https://vulners.com/zdt/1337DAY-ID-28573 | 5.0 | HTTP OPTIONS Memory Leak Exploit *EXPLOIT*
+ https://vulners.com/zdt/1337DAY-ID-26574 | 5.0 | Microsoft Windows Kernel - win32k!NtQueryCompositionSurfaceBinding Stack Memory Disclosure Exploit *EXPLOIT*
+ https://vulners.com/cve/CVE-2019-0197 | 4.9 | Upgrade request from http/1.1 to /2 could lead to a misconfiguration and crash
+ https://vulners.com/exploitdb/EDB-ID:47688 | 4.3 | Httpd mod_proxy - Error Page Cross-Site Scripting *EXPLOIT*
+ https://vulners.com/cve/CVE-2020-11993 | 4.3 | When trace/debug was enabled for the HTTP/2 module, logging statements were made on the wrong connection
+ https://vulners.com/cve/CVE-2020-11985 | 4.3 | IP address spoofing when proxying using mod_remoteip and mod_rewrite 
+ https://vulners.com/cve/CVE-2019-10092 | 4.3 | limited cross-site scripting issue was reported affecting the mod_proxy error page
+ https://vulners.com/cve/CVE-2018-1302 | 4.3 | the Apache HTTP Server could have written a NULL pointer potentially to an already freed memory
+ https://vulners.com/cve/CVE-2018-1301 | 4.3 | an out of bound access after a size limit is reached by reading the HTTP header
+ https://vulners.com/cve/CVE-2018-11763 | 4.3 | continuous, large SETTINGS frames can occupy a connection, thread and CPU time without any connection timeout
+ https://vulners.com/cve/CVE-2016-4975 | 4.3 | CR or LF injection into the “Location” or other outbound header key or value
+ https://vulners.com/cve/CVE-2015-3185 | 4.3 | allows remote attackers to bypass intended access restrictions in opportunistic circumstances
+ https://vulners.com/cve/CVE-2014-8109 | 4.3 | using the same Lua authorization provider with different arguments within different contexts is not supported
+ https://vulners.com/zdt/1337DAY-ID-33575 | 4.3 | Exploit for multiple platform in category web applications *EXPLOIT*
+ https://vulners.com/cve/CVE-2018-1283 | 3.5 | when mod_session forwards its session data to CGI applications a remote user may influence their content
+ https://vulners.com/cve/CVE-2016-8612 | 3.3 | mod_cluster, Improper Input Validation, Segmentation Fault in the serving httpd process
+ https://vulners.com/packetstorm/PACKETSTORM:152441 | 0.0 | Local Privilege Escalation *EXPLOIT*
+ https://vulners.com/packetstorm/PACKETSTORM:140265 | 0.0 | Padding Oracle in Apache mod_session_crypto *EXPLOIT*
+ https://vulners.com/exploitdb/EDB-ID:46676 | 0.0 | CVE-2019-0211 Apache Root Privilege Escalation *EXPLOIT*
+ https://vulners.com/exploitdb/EDB-ID:42745 | 0.0 | HTTP OPTIONS Memory Leak. CVE-2017-9798. Webapps exploit for Linux platform *EXPLOIT*
+ https://vulners.com/exploitdb/EDB-ID:40961 | 0.0 | Remote File Include Vulnerability *EXPLOIT*
+ https://vulners.com/zdt/1337DAY-ID-663 | 0.0 | Remote File Include Vulnerability *EXPLOIT*
+ https://vulners.com/zdt/1337DAY-ID-601 | 0.0 | (help.php) Remote Inclusion Vulnerability *EXPLOIT*
+ https://vulners.com/zdt/1337DAY-ID-4533 | 0.0 | (php uploads) Arbitrary File Upload Vulnerability *EXPLOIT*
+ https://vulners.com/zdt/1337DAY-ID-3109 | 0.0 | (SQL/XSS) Multiple Remote Vulnerabilities *EXPLOIT*
+ https://vulners.com/zdt/1337DAY-ID-2237 | 0.0 | Remote Blind SQL Injection Exploit *EXPLOIT*
+ https://vulners.com/zdt/1337DAY-ID-1415 | 0.0 | (selectlang.php) Remote File Inclusion Vulnerability *EXPLOIT* 
+ https://vulners.com/zdt/1337DAY-ID-1161 | 0.0 | (upload/xss) Multiple Remote Vulnerabilities *EXPLOIT*
 
   <b>nmap --script vuln -sV -p80 192.168.1.110</b>
    ![nmapVulnTarget1](/Images/nmap_vuln_Target1.txt)
