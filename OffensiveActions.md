@@ -1,6 +1,6 @@
-<h1># Red Team: Summary of Operations</h1>
+<h1>Red Team: Summary of Operations</h1>
 
-<h3>## Table of Contents</h3>
+<h2> Table of Contents</h3>
 - Exposed Services
 - Critical Vulnerabilities
 - Exploitation Process
@@ -46,19 +46,20 @@ The following vulnerabilities were identified on each target:
   - List of Critical Vulnerabilities
 
 cpe:/a:apache:http_server:2.4.10: 
+CVE | RATING | APACHE DETAIL | VULNERS REFERENCE
  ------------ | ------------- | ------------- | -------------
  CVE-2020-11984 | 7.5 | mod_proxy_uwsgi info disclosure and possible Remote Code Execution | https://vulners.com/cve/CVE-2020-11984
  CVE-2017-7679 | 7.5 | mod_mime buffer overread | https://vulners.com/cve/CVE-2017-7679
  CVE-2017-7668 | 7.5 | a bug in token list parsing | https://vulners.com/cve/CVE-2017-7668
  CVE-2017-3169 | 7.5 | mod_ssl may dereference a NULL pointer | https://vulners.com/cve/CVE-2017-3169
  CVE-2017-3167 | 7.5 | may lead to authentication requirements being bypassed | https://vulners.com/cve/CVE-2017-3167
- EXPLOITPACK:44C5118F831D55FAF4259C41D8BDA0AB | 7.2 | apache2ctl graceful logrotate Local Privilege Escalation |  https://vulners.com/exploitpack/EXPLOITPACK:44C5118F831D55FAF4259C41D8BDA0AB | *EXPLOIT*
+ EXPLOITPACK:44C5118F831D55FAF4259C41D8BDA0AB | 7.2 | apache2ctl graceful logrotate Local Privilege Escalation | https://vulners.com/exploitpack/EXPLOITPACK:44C5118F831D55FAF4259C41D8BDA0AB | *EXPLOIT*
  CVE-2019-0211 | 7.2 | privilege escalation from modules' scripts | https://vulners.com/cve/CVE-2019-0211
  1337DAY-ID-32502 | apache2ctl graceful logrotate Local Privilege Escalation | 7.2 | https://vulners.com/zdt/1337DAY-ID-32502 *EXPLOIT*
- CVE-2018-1312 | 6.8 | Weak Digest auth nonce generation in mod_auth_digest   https://vulners.com/cve/CVE-2018-1312
- CVE-2017-15715 | 6.8 | <FilesMatch> bypass with a trailing newline in the file name   https://vulners.com/cve/CVE-2017-15715
- CVE-2019-10082 | 6.4 | http/2 session handling could be made to read memory after being freed, during connection shutdown    https://vulners.com/cve/CVE-2019-10082
- CVE-2017-9788 | 6.4 | could reflect the stale value of uninitialized pool memory used by the prior request   https://vulners.com/cve/CVE-2017-9788
+ CVE-2018-1312 | 6.8 | Weak Digest auth nonce generation in mod_auth_digest | https://vulners.com/cve/CVE-2018-1312
+ CVE-2017-15715 | 6.8 | <FilesMatch> bypass with a trailing newline in the file name | https://vulners.com/cve/CVE-2017-15715
+ CVE-2019-10082 | 6.4 | http/2 session handling could be made to read memory after being freed, during connection shutdown | https://vulners.com/cve/CVE-2019-10082
+ CVE-2017-9788 | 6.4 | could reflect the stale value of uninitialized pool memory used by the prior request | https://vulners.com/cve/CVE-2017-9788
  CVE-2019-10097 | 6.0 | https://vulners.com/cve/CVE-2019-10097
  CVE-2019-0217 | 6.0 | https://vulners.com/cve/CVE-2019-0217
  EDB-ID:47689 | 5.8 | https://vulners.com/exploitdb/EDB-ID:47689 *EXPLOIT*
@@ -116,12 +117,12 @@ cpe:/a:apache:http_server:2.4.10:
  1337DAY-ID-1415 | 0.0 | https://vulners.com/zdt/1337DAY-ID-1415 *EXPLOIT*
  1337DAY-ID-1161 | 0.0 | https://vulners.com/zdt/1337DAY-ID-1161 *EXPLOIT*
 
-  # nmap --script vuln -sV -p80 192.168.1.110
+  <b>nmap --script vuln -sV -p80 192.168.1.110</b>
    ![nmapVulnTarget1](/Images/nmap_vuln_Target1.txt)
 
 Target 2 returned identical results to Target 1 
 
-  # nmap --script vuln -sV -p80 192.168.1.115
+  <b>nmap --script vuln -sV -p80 192.168.1.115</b>
    ![nmapVulnTarget2](/Images/nmap_vuln_Target2.txt)
 
 <h2>Exploitation Process</h2>
@@ -134,6 +135,7 @@ The Red Team was able to penetrate both `Target 1` and `Target 2`, and retrieve 
     - **Exploit Used**
       - (Common Weakness) CWE-540: Inclusion of Sensitive Information in Source Code 
       - Click SERVICE link > 192.168.1.110/service.html, Right Click, View Source, flag1 is visible in a commented out line below the footer. 
+      
      REMEDIATION: Source code should be reviewed and all comments removed from production versions of code.
 
   - flag2 hash value: `fc3fd58dcdad9ab23faca6e9a36e581c`
@@ -142,11 +144,12 @@ The Red Team was able to penetrate both `Target 1` and `Target 2`, and retrieve 
       - (Common Weakness) CWE-521: Weak Password Requirements
       - an easily guessed password for user michael (ssh login),
       michael@target1:/var/www/html/wordpress$ 'cat wp-config.php'
+      
     REMEDIATION: Enforcement of password policy on the machine.
-      install libpam- pwquality: 'sudo apt install libpam-pwquality'
+      install libpam- pwquality: <b>'sudo apt install libpam-pwquality'<\b>
       EDIT /etc/pam.d/common-password (use vi or nano)
     	find the line: password   requisite   pam_pwquality.so retry=3
-	    append: 'minlen=12 maxrepeat=3 ucredit=-1 lcredit=-1 dcredit=-1 ocredit=-1 difok=4 reject_username enforce_for_root'
+	append: 'minlen=12 maxrepeat=3 ucredit=-1 lcredit=-1 dcredit=-1 ocredit=-1 difok=4 reject_username enforce_for_root'
 
 
       Identified wordpress installed through testing links on homepage; BLOG directs to  192.168.1.110/wordpress
@@ -155,7 +158,7 @@ The Red Team was able to penetrate both `Target 1` and `Target 2`, and retrieve 
       ![loginURL](/Images/Login_URL_Target1.PNG)
       ![wp-login](/Images/wp-login_Target1.png)
       
-      Run wpscan to enumerate users: 'wpscan --url http://192.168.1.110/wordpress --enumerate u'
+      Run wpscan to enumerate users: <b>'wpscan --url http://192.168.1.110/wordpress --enumerate u'<\b>
       
       ![wpscan1a](/Images/WPScan_Target1a.PNG)
       ![wpscan1b]/Images/WPScan_Target1b.png)
@@ -212,7 +215,7 @@ The Red Team was able to penetrate both `Target 1` and `Target 2`, and retrieve 
     ![sudo-l](/Images/sudo-steven_Target1.png)
     
     We see steven has sudo permission for python
-    We can exploit this to gain a shell as root: 'python -c 'import pty;pty.spawn("/bin/bash")''
+    We can exploit this to gain a shell as root: <b>'python -c 'import pty;pty.spawn("/bin/bash")''</b>
     ![priv-escln](/Images/privilege-escalation_py_Target1.png)
     
     Now as root, search for flag file 
@@ -225,7 +228,7 @@ The Red Team was able to penetrate both `Target 1` and `Target 2`, and retrieve 
       ![found4](/Images/flag4-found_Target1.png)
     - **Exploit Used**
       - (Common Weakness) CWE-250: Execution with Unnecessary Privileges
-      User steven has excessive privilege
+      User steven has excessive privileges
       ![excess-priv](/images/sudo-steven_Target1.PNG)
       
     REMEDIATION: The principle of least privilege should be enforced.
@@ -273,18 +276,18 @@ The Red Team was able to penetrate both `Target 1` and `Target 2`, and retrieve 
      
     ![backdoor.php](/Images/edited-exploit_Target2.png)
     
-    Prior to execution, establish a netcat session: 'nc -lvnp 4444' 
-     './exploit.sh'
+    Prior to execution, establish a netcat session: <b>'nc -lvnp 4444'</b>
+     <b>'./exploit.sh'</b>
      
     ![runExploit](/Images/run-exploit_Target2.png)
     
     We now have a command injection script (backdoor.php) on Target 2 that is accessible via browser.
-**Y'all are running components with known vulnerabilities**
 
   - flag3 hash value: `a0f568aa9de277887f37730d71520d9b`
      ![flag3-T2](/Images/flag3-found_Target2.PNG)
     - **Exploit Used**
       - (Common Weakness) CWE-522: Local file inclusion
       - '192.168.1.115/wordpress/wp-content/uploads/2018/11/flag3.png'
+      
       REMEDIATION: Proper access controls should be in place in the content areas.
        As this is sensitive information, an additional control to restrict access would be preferable, such as data encrytion. 
