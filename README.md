@@ -1,2 +1,2 @@
-# Project_3
-Attack, Defend and Remediate Vulnerabilities 
+# Vulnerabilities: Attack, Defend and Remediate 
+Project_3 / Final Week
