@@ -34,80 +34,67 @@ This scan identifies the services below as potential points of entry:
 
   - List of Critical Vulnerabilities
 
-Both of Target 1 and Target 2 were found to have the following vulnerabilities:
-cpe:/a:apache:http_server:2.4.10: 
+Both Target 1 and Target 2 were found to have the following vulnerabilities:
 
 |       CVE     | RATING | BRIEF DESCRIPTION | LINK  |
 | ------------- | ------------- | ------------- | ------------- |
-| CVE-2020-11984  7.5  |  mod_proxy_uwsgi info disclosure and possible Remote Code Execution |   https://vulners.com/cve/CVE-2020-11984 | 
-| CVE-2017-7679   7.5  |  mod_mime buffer overread |   https://vulners.com/cve/CVE-2017-7679 | 
-| CVE-2017-7668   7.5  | a bug in token list parsing |   https://vulners.com/cve/CVE-2017-7668 | 
-| CVE-2017-3169   7.5   |   mod_ssl may dereference a NULL pointer |  https://vulners.com/cve/CVE-2017-3169 | 
-| CVE-2017-3167   7.5   |   may lead to authentication requirements being bypassed |   https://vulners.com/cve/CVE-2017-3167 | 
-|  EXPLOITPACK:44C5118F831D55FAF4259C41D8BDA0AB |  7.2   |   apache2ctl graceful logrotate Local Privilege Escalation |   https://vulners.com/exploitpack/ | 
-| EXPLOITPACK:44C5118F831D55FAF4259C41D8BDA0AB     *EXPLOIT* | 
-| CVE-2019-0211   7.2   |   privilege escalation from modules' scripts |   https://vulners.com/cve/CVE-2019-0211 | 
+| CVE-2020-11984 |  7.5  |  mod_proxy_uwsgi info disclosure and possible Remote Code Execution |   https://vulners.com/cve/CVE-2020-11984 | 
+| CVE-2017-7679   | 7.5  |  mod_mime buffer overread |   https://vulners.com/cve/CVE-2017-7679 | 
+| CVE-2017-7668   | 7.5  | a bug in token list parsing |   https://vulners.com/cve/CVE-2017-7668 | 
+| CVE-2017-3169   | 7.5   |   mod_ssl may dereference a NULL pointer |  https://vulners.com/cve/CVE-2017-3169 | 
+| CVE-2017-3167  |  7.5   |   may lead to authentication requirements being bypassed |   https://vulners.com/cve/CVE-2017-3167 | 
+|  EXPLOITPACK:44C5118F831D55FAF4259C41D8BDA0AB |  7.2   |   apache2ctl graceful logrotate Local Privilege Escalation |   https://vulners.com/exploitpack/ *EXPLOIT* |
+| CVE-2019-0211  |  7.2   |   privilege escalation from modules' scripts |   https://vulners.com/cve/CVE-2019-0211 | 
 |   1337DAY-ID-32502  |   7.2   |    apache2ctl graceful logrotate Local Privilege Escalation |   https://vulners.com/zdt/1337DAY-ID-32502        *EXPLOIT* | 
 |  CVE-2018-1312 |   6.8  |    Weak Digest auth nonce generation in mod_auth_digest |   https://vulners.com/cve/CVE-2018-1312 | 
 |  CVE-2017-15715 |  6.8   |   <FilesMatch> bypass with a trailing newline in the file name  |  https://vulners.com/cve/CVE-2017-15715 | 
 |  CVE-2019-10082 |  6.4   |   http/2 session handling could be made to read memory after being freed, during connection shutdown  |   https://vulners.com/cve|
 |  CVE-2017-9788  |  6.4   |    could reflect the stale value of uninitialized pool memory used by the prior request  |  https://vulners.com/cve/CVE-2017-9788 | 
-|  CVE-2019-10097|   6.0    |   | https://vulners.com/cve/CVE-2019-10097 | 
-|  CVE-2019-0217 |   6.0   |    | https://vulners.com/cve/CVE-2019-0217 | 
+|  CVE-2019-10097|   6.0    | a specially crafted PROXY header could trigger a stack buffer overflow or NULL pointer deference  | https://vulners.com/cve/CVE-2019-10097 | 
+|  CVE-2019-0217 |   6.0   |  could allow a user with valid credentials to authenticate using another username, bypassing configured access control restrictions  | https://vulners.com/cve/CVE-2019-0217 | 
 |  EDB-ID:47689  |   5.8   |    | https://vulners.com/exploitdb/EDB-ID:47689      *EXPLOIT* | 
 |  CVE-2020-1927|    5.8   |    | https://vulners.com/cve/CVE-2020-1927 | 
-|  CVE-2019-10098|   5.8  |     https://vulners.com/cve/CVE-2019-10098 | 
-|  1337DAY-ID-33577  |  5.8    |  |  https://vulners.com/zdt/1337DAY-ID-33577        *EXPLOIT* | 
-|  CVE-2016-5387|    5.1   |    | https://vulners.com/cve/CVE-2016-5387 | 
+|  CVE-2019-10098|   5.8  | redirect instead to an unexpected URL within the request URL |    https://vulners.com/cve/CVE-2019-10098 | 
+|  1337DAY-ID-33577  |  5.8    | pache Httpd mod_rewrite - Open Redirects Vulnerability  |  https://vulners.com/zdt/1337DAY-ID-33577        *EXPLOIT* | 
+|  CVE-2016-5387|    5.1   |  might allow remote attackers to redirect an application's outbound HTTP traffic to an arbitrary proxy server   | https://vulners.com/cve/CVE-2016-5387 | 
 |  SSV:96537    |    5.0   |    | https://vulners.com/seebug/SSV:96537    *EXPLOIT* | 
-|  MSF:AUXILIARY/SCANNER/HTTP/APACHE_OPTIONSBLEED  |  5.0   |    | https://vulners.com/metasploit/MSF:AUXILIARY/SCANNER/HTTP/APACHE_OPTIONSBLEED    *EXPLOIT* | 
-|  EXPLOITPACK:DAED9B9E8D259B28BF72FC7FDC4755A7  |    5.0  |     | https://vulners.com/exploitpack/EXPLOITPACK:DAED9B9E8D259B28BF72FC7FDC4755A7     *EXPLOIT* | 
-|  EXPLOITPACK:C8C256BE0BFF5FE1C0405CB0AA9C075D | 5.0   |    | https://vulners.com/exploitpack/EXPLOITPACK:C8C256BE0BFF5FE1C0405CB0AA9C075D     *EXPLOIT* | 
-|  CVE-2020-9490 |   5.0   |    | https://vulners.com/cve/CVE-2020-9490 | 
-|  CVE-2020-1934  |  5.0   |    | https://vulners.com/cve/CVE-2020-1934 | 
-|  CVE-2019-10081 |  5.0   |    | https://vulners.com/cve/CVE-2019-10081 | 
-|  CVE-2019-0220  |  5.0    |   | https://vulners.com/cve/CVE-2019-0220 | 
-|  CVE-2019-0196 |   5.0   |    | https://vulners.com/cve/CVE-2019-0196 | 
-|  CVE-2018-17199 |  5.0   |    | https://vulners.com/cve/CVE-2018-17199 | 
-|  CVE-2018-17189|   5.0   |    | https://vulners.com/cve/CVE-2018-17189 | 
-|  CVE-2018-1333 |   5.0  |     | https://vulners.com/cve/CVE-2018-1333 | 
-|  CVE-2018-1303 |    5.0   |    | https://vulners.com/cve/CVE-2018-1303 | 
-|  CVE-2017-9798 |   5.0  |     | https://vulners.com/cve/CVE-2017-9798 | 
-|  CVE-2017-15710 |  5.0   |    | https://vulners.com/cve/CVE-2017-15710 | 
-|  CVE-2016-8743 |   5.0  |     | https://vulners.com/cve/CVE-2016-8743 | 
-|  CVE-2016-2161 |   5.0  |     | https://vulners.com/cve/CVE-2016-2161 | 
-|  CVE-2016-0736 |   5.0   |    | https://vulners.com/cve/CVE-2016-0736 | 
-|  CVE-2015-3183 |   5.0   |    | https://vulners.com/cve/CVE-2015-3183 | 
-|  CVE-2015-0228 |   5.0  |     | https://vulners.com/cve/CVE-2015-0228 | 
-|  CVE-2014-3583 |   5.0  |     | https://vulners.com/cve/CVE-2014-3583 | 
-|  1337DAY-ID-28573  |       5.0  |     | https://vulners.com/zdt/1337DAY-ID-28573        *EXPLOIT* | 
-|  1337DAY-ID-26574  |       5.0  |     | https://vulners.com/zdt/1337DAY-ID-26574        *EXPLOIT* | 
-|  CVE-2019-0197 |   4.9    |   | https://vulners.com/cve/CVE-2019-0197 | 
-|  EDB-ID:47688 |    4.3   |    | https://vulners.com/exploitdb/EDB-ID:47688      *EXPLOIT* | 
-|  CVE-2020-11993 |   4.3   |    | https://vulners.com/cve/CVE-2020-11993 | 
-|  CVE-2020-11985 |  4.3  |    | https://vulners.com/cve/CVE-2020-11985 | 
-|  CVE-2019-10092 |  4.3  |     | https://vulners.com/cve/CVE-2019-10092 | 
-|  CVE-2018-1302 |   4.3  |     | https://vulners.com/cve/CVE-2018-1302 | 
-|  CVE-2018-1301 |   4.3   |    | https://vulners.com/cve/CVE-2018-1301 | 
-|  CVE-2018-11763 |  4.3   |    | https://vulners.com/cve/CVE-2018-11763 | 
-|  CVE-2016-4975 |   4.3  |     | https://vulners.com/cve/CVE-2016-4975  | 
-|  CVE-2015-3185 |   4.3  |     | https://vulners.com/cve/CVE-2015-3185 | 
-|  CVE-2014-8109  |  4.3  |     | https://vulners.com/cve/CVE-2014-8109  | 
-|  1337DAY-ID-33575 |   4.3  |  |   https://vulners.com/zdt/1337DAY-ID-33575        *EXPLOIT* | 
-|  CVE-2018-1283 |   3.5  |    |  https://vulners.com/cve/CVE-2018-1283 | 
-|  CVE-2016-8612 |   3.3   |    | https://vulners.com/cve/CVE-2016-8612 | 
-|  PACKETSTORM:152441 | 0.0  |     |       *EXPLOIT*| 
-|  PACKETSTORM:140265 | 0.0  |     | https://vulners.com/packetstorm/PACKETSTORM:140265      *EXPLOIT*| 
-|  EDB-ID:46676 | 0.0   |    | https://vulners.com/exploitdb/EDB-ID:46676      *EXPLOIT*| 
-|  EDB-ID:42745 | 0.0  |     | https://vulners.com/exploitdb/EDB-ID:42745      *EXPLOIT*| 
-|  EDB-ID:40961 | 0.0  |     | https://vulners.com/exploitdb/EDB-ID:40961      *EXPLOIT* | 
-|  1337DAY-ID-663 | 0.0  |    | https://vulners.com/zdt/1337DAY-ID-663  *EXPLOIT*| 
-|  1337DAY-ID-601 | 0.0  |     | https://vulners.com/zdt/1337DAY-ID-601  *EXPLOIT*| 
-|  1337DAY-ID-4533 | 0.0  |    |  https://vulners.com/zdt/1337DAY-ID-4533 *EXPLOIT*| 
-|  1337DAY-ID-3109 | 0.0  |    |  https://vulners.com/zdt/1337DAY-ID-3109 *EXPLOIT*| 
-| 1337DAY-ID-2237 |  0.0   |    | https://vulners.com/zdt/1337DAY-ID-2237 *EXPLOIT*| 
-|  1337DAY-ID-1415 |  0.0   |   |  https://vulners.com/zdt/1337DAY-ID-1415 *EXPLOIT*| 
-| 1337DAY-ID-1161 |  0.0   |    | https://vulners.com/zdt/1337DAY-ID-1161 *EXPLOIT*| 
+|  MSF:AUXILIARY/SCANNER/HTTP/APACHE_OPTIONSBLEED  |  5.0   | the Allow response header returned from an OPTIONS request may bleed memory if the server has a .htaccess file with an invalid Limit method defined  | https://vulners.com/metasploit/MSF:AUXILIARY/SCANNER/HTTP/APACHE_OPTIONSBLEED    *EXPLOIT* | 
+|  EXPLOITPACK:DAED9B9E8D259B28BF72FC7FDC4755A7  |    5.0  |   Apache mod_session_crypto - Padding Oracle  | https://vulners.com/exploitpack/EXPLOITPACK:DAED9B9E8D259B28BF72FC7FDC4755A7     *EXPLOIT* | 
+|  EXPLOITPACK:C8C256BE0BFF5FE1C0405CB0AA9C075D | 5.0   |  OPTIONS Memory Leak  | https://vulners.com/exploitpack/EXPLOITPACK:C8C256BE0BFF5FE1C0405CB0AA9C075D     *EXPLOIT* | 
+|  CVE-2020-9490 |   5.0   |  Apache Httpd < None: Push Diary Crash on Specifically Crafted HTTP/2 Header  | https://vulners.com/cve/CVE-2020-9490 | 
+|  CVE-2020-1934  |  5.0   | mod_proxy_ftp may use uninitialized memory when proxying to a malicious FTP server   | https://vulners.com/cve/CVE-2020-1934 | 
+|  CVE-2019-10081 |  5.0   | could lead to an overwrite of memory in the pushing request's pool  | https://vulners.com/cve/CVE-2019-10081 | 
+|  CVE-2019-0220  |  5.0   |  Inconsistant handling across components, when the path component of a request URL contains multiple consecutive slashes ('/')| https://vulners.com/cve/CVE-2019-0220 | 
+|  CVE-2019-0196 |   5.0   | flawed string comparison when determining the method of a request, thus processing the request incorrectly  | https://vulners.com/cve/CVE-2019-0196 | 
+|  CVE-2018-17199 |  5.0   | causes session expiry time to be ignored for mod_session_cookie sessions  | https://vulners.com/cve/CVE-2018-17199 | 
+|  CVE-2018-17189|   5.0   |   the h2 stream for that request unnecessarily occupied a server thread cleaning up that incoming data  | https://vulners.com/cve/CVE-2018-17189 | 
+|  CVE-2018-1333 |   5.0  | workers would be allocated 60 seconds longer than necessary, leading to worker exhaustion and a denial of service | https://vulners.com/cve/CVE-2018-1333 | 
+|  CVE-2018-1303 |    5.0   | an out of bound read while preparing data to be cached in shared memory  | https://vulners.com/cve/CVE-2018-1303 | 
+|  CVE-2017-9798 |   5.0  |  Apache httpd allows remote attackers to read secret data from process memory   | https://vulners.com/cve/CVE-2017-9798 | 
+|  CVE-2017-15710 |  5.0   | A header value of less than two characters forces an out of bound write of one NUL byte to a memory location that is not part of the string | https://vulners.com/cve/CVE-2017-15710 | 
+|  CVE-2016-8743 |   5.0  |  may result in request smuggling, response splitting and cache pollution   | https://vulners.com/cve/CVE-2016-8743 | 
+|  CVE-2016-2161 |   5.0  |  malicious input to mod_auth_digest can cause the server to crash continually  | https://vulners.com/cve/CVE-2016-2161 | 
+|  CVE-2016-0736 |   5.0   | mod_session_crypto, vulnerable to padding oracle attacks, particularly with CBC  | https://vulners.com/cve/CVE-2016-0736 | 
+|  CVE-2015-3183 |   5.0   |  mishandling of large chunk-size values and invalid chunk-extension characters in modules/http/http_filters.c  | https://vulners.com/cve/CVE-2015-3183 | 
+|  CVE-2015-0228 |   5.0  |  allows remote attackers to cause a denial of service (child-process crash)   | https://vulners.com/cve/CVE-2015-0228 | 
+|  CVE-2014-3583 |   5.0  |  FastCGI servers to cause a denial of service (buffer over-read and daemon crash) via long response headers  | https://vulners.com/cve/CVE-2014-3583 | 
+|  1337DAY-ID-28573  |    5.0  |  Apache - HTTP OPTIONS Memory Leak Exploit   | https://vulners.com/zdt/1337DAY-ID-28573        *EXPLOIT* | 
+|  1337DAY-ID-26574  |    5.0  | Microsoft Windows Kernel - win32k!NtQueryCompositionSurfaceBinding Stack Memory Disclosure Exploit    | https://vulners.com/zdt/1337DAY-ID-26574        *EXPLOIT* | 
+|  CVE-2019-0197 |   4.9    | Upgrade request from http/1.1 to http/2 that was not the first request on a connection could lead to a misconfiguration and crash  | https://vulners.com/cve/CVE-2019-0197 | 
+|  EDB-ID:47688 |    4.3   |  Apache Httpd mod_proxy - Error Page Cross-Site Scripting  | https://vulners.com/exploitdb/EDB-ID:47688      *EXPLOIT* | 
+|  CVE-2020-11993 |   4.3   | on certain traffic edge patterns, logging statements were made on the wrong connection, causing concurrent use of memory pools   | https://vulners.com/cve/CVE-2020-11993 | 
+|  CVE-2020-11985 |  4.3  |  using proxying with mod_remoteip and certain mod_rewrite rules, an attacker could spoof their IP address for logging and PHP scripts  | https://vulners.com/cve/CVE-2020-11985 | 
+|  CVE-2019-10092 |  4.3  |  a limited cross-site scripting issue was reported affecting the mod_proxy error page   | https://vulners.com/cve/CVE-2019-10092 | 
+|  CVE-2018-1302 |   4.3  |  could have written a NULL pointer potentially to an already freed memory   | https://vulners.com/cve/CVE-2018-1302 | 
+|  CVE-2018-1301 |   4.3   |  an out of bound access after a size limit is reached by reading the HTTP header | https://vulners.com/cve/CVE-2018-1301 | 
+|  CVE-2018-11763 |  4.3   | a client can occupy a connection, server thread and CPU time without any connection timeout coming to effect  | https://vulners.com/cve/CVE-2018-11763 | 
+|  CVE-2016-4975 |   4.3  |  possible CRLF injection allowing HTTP response splitting attacks for sites which use mod_userdir   | https://vulners.com/cve/CVE-2016-4975  | 
+|  CVE-2015-3185 |   4.3  |  allows remote attackers to bypass intended access restrictions in opportunistic circumstances   | https://vulners.com/cve/CVE-2015-3185 | 
+|  CVE-2014-8109  |  4.3  |   allows remote attackers to bypass intended access restrictions in opportunistic circumstances    | https://vulners.com/cve/CVE-2014-8109  | 
+|  1337DAY-ID-33575 |   4.3  | Apache Httpd mod_proxy - Error Page Cross-Site Scripting Vulnerability |   https://vulners.com/zdt/1337DAY-ID-33575        *EXPLOIT* | 
+|  CVE-2018-1283 |   3.5  |   a remote user may influence their content by using a "Session" header  |  https://vulners.com/cve/CVE-2018-1283 | 
+|  CVE-2016-8612 |   3.3   |  an Improper Input Validation in the protocol parsing logic resulting in a Segmentation Fault in httpd process  | https://vulners.com/cve/CVE-2016-8612 | 
+
 
 
   # nmap --script vuln -sV -p80 192.168.1.110
