@@ -10,31 +10,31 @@
 ### Network Topology
 ![network diagram](/Images/Major-Project-Diagram-Final.png)
 
-The following machines were identified on the network:
-- Capstone
-  - **Operating System**: Linux 4.15 - 5.6
-  - **Purpose**:  Corporate Web Server and Kibana Web
-  - **IP Address**: 192.168.1.105
-- ELK
-  - **Operating System**: Linux 4.15 - 5.6
-  - **Purpose**: Monitoring Server (Elastic Stack)
-  - **IP Address**: 192.168.1.100
-- Target 1
-  - **Operating System**: Linux 3.2 - 4.9
-  - **Purpose**: Web Application Server 
-  - **IP Address**: 192.168.1.110
-  - Target 2
-  - **Operating System**: Linux 3.2 - 4.9
-  - **Purpose**: Web Application Server 
-  - **IP Address**: 192.168.1.115
-  - Kali
-  - **Operating System**: Linux 2.6.32
-  - **Purpose**: Pentest Station
-  - **IP Address**: 192.168.1.90
-  - Jump Host
-  - **Operating System**: Windows 10 Pro
-  - **Purpose**: Gateway, HyperV Host, Jump Host, browser
-  - **IP Address**: 192.168.1.1
+The initial nmap scan identified the following machines on the network:
+**Capstone**
+   **Operating System**: Linux 4.15 - 5.6
+   **Purpose**:  Corporate Web Server and Kibana Web
+   **IP Address**: 192.168.1.105
+**ELK**
+   **Operating System**: Linux 4.15 - 5.6
+   **Purpose**: Monitoring Server (Elastic Stack)
+   **IP Address**: 192.168.1.100
+**Target 1**
+   **Operating System**: Linux 3.2 - 4.9
+   **Purpose**: Web Application Server 
+   **IP Address**: 192.168.1.110
+**Target 2**
+   **Operating System**: Linux 3.2 - 4.9
+   **Purpose**: Web Application Server 
+   **IP Address**: 192.168.1.115
+**Kali**
+   **Operating System**: Linux 2.6.32
+   **Purpose**: Pentest Station
+   **IP Address**: 192.168.1.90
+**Jump Host**
+   **Operating System**: Windows 10 Pro
+   **Purpose**: Gateway, HyperV Host, Jump Host, browser
+   **IP Address**: 192.168.1.1
 
 ### Description of Targets
 
@@ -179,43 +179,67 @@ An attacker may gain system information from reading server logs, so acccess to 
 Understanding your server logs will provide details of normal behaviour and make it easier to identify or rule out issues during an incident
 
  
-## MySQL secure installation
+## MySQL Secure Installation
 
 MySQL should be installed via a secure installation which allows us to set security options during the installation.
 MySQL secure installation may also be run for an existing installation.
+
 	'sudo mysql_secure_installation'
 
-Note: There is a choice of password validation policy levels included so ensure you are familiar and understand the selection you will make here.  Were an existing account to have problems after the secure installation (such as a database user for a running service like WordPress) we can change the database user password for the user/service with this command:
-mysqladmin -u USER -p password NEWPASSWORD
+CAUTION: There is a choice of password validation policy levels included so ensure you are familiar and understand the selection you will make here.
+  Were an existing account to have problems after the secure installation (such as a database user for a running service like WordPress) we can change the database user password for the user/service with this command:  'mysqladmin -u USER -p password NEWPASSWORD'
 
-Running MySQL secure installation;
+# Running MySQL secure installation;
+
 ●	Update the password plugin (Y and hit Enter)
-●	Select the level of password validation policy you want to enable (0 = low, 1 = medium, 2 = strong).
+
+●	Select the level of password validation policy you want to enable (0 = low, 1 = medium, 2 = strong)
+
 ●	Change the root password (to dismiss this option type N)
+
 ●	Remove anonymous users (Y to remove)
+
 ●	Disallow remote root login (Y to disable)
+
 ●	Remove test database (Y to remove)
+
 
 ## Hardening WordPress
 
 WordPress has numerous features that can be exploited and a raft of plugins are available that can be used to remediate these vulnerabilities.  
+
 ●	Second factor authentication – prevents brute force attacks on user accounts 
+
 ●	Installing a WordPress security plugin such as "MalCare" will assist administrators with a clear interface to modify important settings
+
 ●	The first step is to scan and clean our website.    
+
 ●	Limiting Logins via a plugin like "Limit Login Attempts Reloaded" or by modifying functions.php
+
 ●	Block PHP execution in untrusted folders; add the following to /public_html/.htaccess
+
 <Files *.php>
 deny from all
 </Files>
+
 ●	Disable file editor plugin via modifying wp-config
+
 ●	Mandate stronger passwords (via MalCare plugin)
+
 ●	Change security keys and encrypt wp-config (via MalCare plugin)
+
 ●	Prevent plugin installations – via edit of wp_config.php to add this line;
+
 define(‘DISALLOW_FILE_MODS’,true);
+
 ●	Automatically log out inactive users - install a plugin such as Bullet Proof Security
+
 ●	Audit logging - install plugin "WP Security Audit Log"
+
 ●	Set up a Web Application Firewall via a security plugin
+
 ●	Set up alerts for suspicious activity and malware detection (via MalCare plugin) 
+
 ●	Secure communications with Configure SSL Certificates, especially for any internet-based requests
 
 
@@ -224,7 +248,7 @@ define(‘DISALLOW_FILE_MODS’,true);
 
 - Patch: install security updates for installed components
 
-- Why It Works:  Maintaining current versions for openssl, Apache, MySQL, Wordpress, etc; will remediate most of the platform vulnerabilities discovered.
+Why It Works:  Maintaining current versions for openssl, Apache, MySQL, Wordpress, etc; will remediate most of the platform vulnerabilities discovered.
 
 ●	Vendors release supported patches / fixes in response to reported vulnerabilities. 
 
