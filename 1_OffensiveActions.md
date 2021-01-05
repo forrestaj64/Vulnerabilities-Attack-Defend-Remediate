@@ -104,7 +104,9 @@ Both Target 1 and Target 2 were found to have the following vulnerabilities (vul
   nmap --script vuln -sV -p80 192.168.1.110
   ```
   ![nmapVulnTarget1a]/Images/nmap_vuln_Target1a.png
+
   ![nmapVulnTarget1b]/Images/nmap_vuln_Target1b.png
+
   ![nmapVulnTarget1c]/Images/nmap_vuln_Target1c.png
 
 
@@ -114,7 +116,9 @@ Both Target 1 and Target 2 were found to have the following vulnerabilities (vul
   nmap --script vuln -sV -p80 192.168.1.115
   ```
   ![nmapVulnTarget2a]/Images/nmap_vuln_Target2a.png
+
   ![nmapVulnTarget2b]/Images/nmap_vuln_Target2b.png
+
   ![nmapVulnTarget2c]/Images/nmap_vuln_Target2c.png
 
 ## Exploitation Process
@@ -126,8 +130,8 @@ Target 1
 
     ![flag1]/Images/flag1-found_Target1.png
 
-    - **Exploit Used**
-      (Common Weakness) CWE-540: Inclusion of Sensitive Information in Source Code 
+    **Exploit Used**
+      - (Common Weakness) CWE-540: Inclusion of Sensitive Information in Source Code 
       - Click SERVICE link > 192.168.1.110/service.html, Right Click, View Source, flag1 is visible in a commented out line below the footer. 
      REMEDIATION: Source code should be reviewed and all comments removed from production versions of code.
 
@@ -135,8 +139,8 @@ Target 1
 
     ![flag2]/Images/flag2-found_Target1.png
 
-    - **Exploit Used**
-      (Common Weakness) CWE-521: Weak Password Requirements
+    **Exploit Used**
+      - (Common Weakness) CWE-521: Weak Password Requirements
       - an easily guessed password for user michael (ssh login),
       michael@target1:/var/www/html/wordpress$ 'cat wp-config.php'
     REMEDIATION: Enforcement of password policy on the machine.
@@ -160,8 +164,8 @@ Target 1
 
     ![flag3]/Images/flag3-detail_Target1.png
 
-    - **Exploit Used**
-      (Common Weakness) CWE-260: Password in configuration file
+    **Exploit Used**
+      - (Common Weakness) CWE-260: Password in configuration file
       - wp-config.php contained DB_NAME, DB_USER, DB_PASSWORD for root user
 
     ![user-passwd]/Images/mysql-user-login-pass_Target1.png
@@ -215,9 +219,9 @@ Target 1
       - flag4 hash value: `715dea6c055b9fe3337544932f2941ce`
 
       ![found4]/Images/flag4-found_Target1.png
-      
-    - **Exploit Used**
-      (Common Weakness) CWE-250: Execution with Unnecessary Privileges
+
+    **Exploit Used**
+      - (Common Weakness) CWE-250: Execution with Unnecessary Privileges
       - User steven has excessive privilege
       ![excess-priv]/Images/sudo-steven_Target1.png
     REMEDIATION: The principle of least privilege should be enforced.
@@ -229,8 +233,8 @@ Target 2
 
     ![found1-T2]/Images/flag1-found_Target2.png
 
-    - **Exploit Used**
-      (Common Weakness) CWE-548: Information leakage through directory listing
+    **Exploit Used**
+      - (Common Weakness) CWE-548: Information leakage through directory listing
       - 'gobuster -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt dir -u 192.168.1.115'
 
     ![gobuster]/Images/gobuster_Target2.png
@@ -254,30 +258,38 @@ Target 2
 
     ![found2-T2]/Images/flag2-found_Target2.png
 
-    - **Exploit Used**
-      (Common Weakness) CWE-78: Improper Sanitization of Special Elements used in an OS Command
+    **Exploit Used**
+      - (Common Weakness) CWE-78: Improper Sanitization of Special Elements used in an OS Command
       - '192.168.1.115/backdoor.php?cmd=find+/var/www+-type+f+iname+'flag*''
+
       ![find.flags]/Images/find-flags_Target2.png
+
       (the path to flag3 is also disclosed here)
+
       - '192.168.1.115/backdoor.php?cmd=cat+/var/www/flag2.txt'
+
     REMEDIATION: Proper input controls within the application would prevent the execution of this exploit. 
      
      Establishing the backdoor;
      The script provided was edited to include the IP of target2
      exploit.sh generates backdoor.php on the target, encoded with functions to allow command injection 
+
     ![backdoor.php]/Images/edited-exploit_Target2.png
+
     Prior to execution, establish a netcat session: 'nc -lvnp 4444' 
      './exploit.sh'
+
     ![runExploit]/Images/run-exploit_Target2.png
+
     We now have a command injection script (backdoor.php) on Target 2 that is accessible via browser.
-**Y'all are running components with known vulnerabilities**
+
 
   - flag3 hash value: `a0f568aa9de277887f37730d71520d9b`
 
      ![flag3-T2]/Images/flag3-found_Target2.png
 
-    - **Exploit Used**
-      (Common Weakness) CWE-522: Local file inclusion
+    **Exploit Used**
+      - (Common Weakness) CWE-522: Local file inclusion
       - '192.168.1.115/wordpress/wp-content/uploads/2018/11/flag3.png'
       REMEDIATION: Proper access controls should be in place in the content areas.
        As this is sensitive information, an additional control to restrict access should be in place, such as data encrytion. 
