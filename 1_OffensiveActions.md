@@ -101,13 +101,12 @@ Both Target 1 and Target 2 were found to have the following vulnerabilities (vul
 **Target 1 returned results**
 
 ```bash
-  nmap --script vuln -sV -p80 192.168.1.110
+  nmap --
+  script vuln -sV -p80 192.168.1.110
   ```
-  ![nmapVulnTarget1a](/Images/nmap_vuln_Target1a.png)
-
-  ![nmapVulnTarget1b](/Images/nmap_vuln_Target1b.png)
-
-  ![nmapVulnTarget1c](/Images/nmap_vuln_Target1c.png)
+  ![nmapVulnTarget1a](/Images/nmap_vuln-80-Target1a.png)
+  ![nmapVulnTarget1b](/Images/nmap_vuln-80-Target1b.png)
+  ![nmapVulnTarget1c](/Images/nmap_vuln-80-Target1c.png)
 
 
 **Target 2 results (returned identical to Target 1)**
@@ -115,11 +114,11 @@ Both Target 1 and Target 2 were found to have the following vulnerabilities (vul
 ```bash
   nmap --script vuln -sV -p80 192.168.1.115
   ```
-  ![nmapVulnTarget2a](/Images/nmap_vuln_Target2a.png)
 
-  ![nmapVulnTarget2b](/Images/nmap_vuln_Target2b.png)
+  ![nmapVulnTarget2a](/Images/nmap_vuln-80-Target2a.png)
+  ![nmapVulnTarget2b](/Images/nmap_vuln-80-Target2b.png)
+  ![nmapVulnTarget2c](/Images/nmap_vuln-80-Target2c.png)
 
-  ![nmapVulnTarget2c](/Images/nmap_vuln_Target2c.png)
 
 ## Exploitation Process
 
@@ -313,6 +312,6 @@ Target 2
     **Exploit Used**
       - (Common Weakness) CWE-522: Local file inclusion
       - '192.168.1.115/wordpress/wp-content/uploads/2018/11/flag3.png'
-      
+
       REMEDIATION: Proper access controls should be in place in the content areas.
        As this is sensitive information, an additional control to restrict access should be in place, such as data encrytion. 
