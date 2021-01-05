@@ -35,7 +35,7 @@ This scan identifies the services below as potential points of entry:
 
 ### Critical Vulnerabilities
 
-  - List of Critical Vulnerabilities
+  - Table Listing Critical Vulnerabilities by CVSS Rating
 
 Both Target 1 and Target 2 were found to have the following vulnerabilities (vulnerabilities rated 0.0 excluded):
 
