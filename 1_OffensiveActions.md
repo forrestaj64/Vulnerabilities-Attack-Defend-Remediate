@@ -124,7 +124,9 @@ Both Target 1 and Target 2 were found to have the following vulnerabilities (vul
 
 
 The Red Team was able to penetrate both `Target 1` and `Target 2`, and retrieve the following confidential data:
-Target 1
+
+### Target 1
+
   - flag1 hash value: `b9bbcd33e11b80be759c4e844862482d`
 
     ![flag1](/Images/flag1-found_Target1.png)
@@ -269,7 +271,7 @@ Target 1
 
      We need to run visudo to edit /etc/sudoers or add specific config under the /etc/sudoers.d directory
 
-Target 2
+### Target 2
 
   - flag1 hash value: `a2c1f66d2b8051db3a5874b5874b5b6e43e21`
 
