@@ -8,7 +8,7 @@
 - Suggestions for Going Further
 
 ### Network Topology
-![network diagram](/Images/Major-Project-Diagram-Final.png)
+![network diagram](/Images/Major-Project-Diagram-Final.PNG)
 
 The following machines were identified on the network:
 - Capstone
@@ -54,7 +54,7 @@ Alert 1 is implemented as follows:
   - **Vulnerability Mitigated**: Volumes of HTTP Requests (web server is open to intensive scans)
   - **Reliability**: Moderate, this alert generates may generate a false positives when we have abnormally high demand.
     This alert should be tuned to remain effective around peak load periods.
-    ![httpCountAlert](/Images/Alert.Http.Response.Count.png)
+    ![httpCountAlert](/Images/Alert.Http.Response.Count.PNG)
 
 #### Name of Alert 2
  `HTTP Request Bytes`
@@ -64,7 +64,7 @@ Alert 2 is implemented as follows:
   - **Vulnerability Mitigated**: Volumes of HTTP Requests (web server is open to intensive scans)
   - **Reliability**: Moderate, this alert generates may generate a false positives when we have abnormally high demand.
     This alert should be tuned to remain effective around peak load periods.
-    ![httpRequestAlert](/Images/Alert.Http.Request.Bytes.png)
+    ![httpRequestAlert](/Images/Alert.Http.Request.Bytes.PNG)
 
 #### Name of Alert 3
  `Brute Force Attempt`
@@ -75,7 +75,7 @@ Alert 3 is implemented as follows:
   - **Reliability**: Medium, this alert generated no false positives for the period.
     This alert should be tuned if it were triggered by valid logins, coinciding at the start of a shift for example.
     
-    ![BruteForceAlert](Images/Alert.BruteForce.png)
+    ![BruteForceAlert](Images/Alert.BruteForce.PNG)
 
 #### Name of Alert 4
  `WPScan`
@@ -85,7 +85,7 @@ Alert 4 is implemented as follows:
   - **Vulnerability Mitigated**: enumeration of Web server, DOS attacks
   - **Reliability**: High, this alert generates no false positives.
     This alert could be triggered by authorised scans, a block-list entry would cover this.
-    ![wpscan](/Images/Alert.WPScan.png)
+    ![wpscan](/Images/Alert.WPScan.PNG)
 
 ### Suggestions for Going Further
 

@@ -11,10 +11,10 @@ Nmap scan results for each machine reveal the below services and OS details:
 
 ```bash
 $ nmap -v -sV -O 192.168.1.110
-  ![nmapTarget1]/Images/nmap-vsVO_Target1.txt
+  ![nmapTarget1]/Images/nmap-vsVO_Target1.PNG
 
 $ nmap  -v -sV -O 192.168.1.115
-  ![nmapTarget2]/Images/nmap-vsVO_Target2.txt
+  ![nmapTarget2]/Images/nmap-vsVO_Target2.PNG
 ```
 
 This scan identifies the services below as potential points of entry:
@@ -52,12 +52,12 @@ Both Target 1 and Target 2 were found to have the following vulnerabilities:
 |  CVE-2017-9788  |  6.4   |    could reflect the stale value of uninitialized pool memory used by the prior request  |  https://vulners.com/cve/CVE-2017-9788 | 
 |  CVE-2019-10097|   6.0    | a specially crafted PROXY header could trigger a stack buffer overflow or NULL pointer deference  | https://vulners.com/cve/CVE-2019-10097 | 
 |  CVE-2019-0217 |   6.0   |  could allow a user with valid credentials to authenticate using another username, bypassing configured access control restrictions  | https://vulners.com/cve/CVE-2019-0217 | 
-|  EDB-ID:47689  |   5.8   |    | https://vulners.com/exploitdb/EDB-ID:47689 *EXPLOIT* | 
-|  CVE-2020-1927|    5.8   |    | https://vulners.com/cve/CVE-2020-1927 | 
-|  CVE-2019-10098|   5.8  | redirect instead to an unexpected URL within the request URL |    https://vulners.com/cve/CVE-2019-10098 | 
+|  EDB-ID:47689  |   5.8   |  Apache Httpd mod_rewrite - Open Redirects  | https://vulners.com/exploitdb/EDB-ID:47689 *EXPLOIT* | 
+|  CVE-2020-1927|    5.8   |  mod_rewrite redirects to an an unexpected URL within the request URL  | https://vulners.com/cve/CVE-2020-1927 | 
+|  CVE-2019-10098|   5.8  | mod_rewrite redirects instead to an unexpected URL within the request URL |    https://vulners.com/cve/CVE-2019-10098 | 
 |  1337DAY-ID-33577  |  5.8    | pache Httpd mod_rewrite - Open Redirects Vulnerability  |  https://vulners.com/zdt/1337DAY-ID-33577 *EXPLOIT* | 
 |  CVE-2016-5387|    5.1   |  might allow remote attackers to redirect an application's outbound HTTP traffic to an arbitrary proxy server   | https://vulners.com/cve/CVE-2016-5387 | 
-|  SSV:96537    |    5.0   |    | https://vulners.com/seebug/SSV:96537    *EXPLOIT* | 
+|  SSV:96537    |    5.0   |  HTTP OPTIONS method can leak Apache's server memory | https://vulners.com/seebug/SSV:96537    *EXPLOIT* | 
 |  MSF:AUXILIARY/SCANNER/HTTP/APACHE_OPTIONSBLEED  |  5.0   | the Allow response header returned from an OPTIONS request may bleed memory if the server has a .htaccess file with an invalid Limit method defined  | https://vulners.com/metasploit/MSF:AUXILIARY/SCANNER/HTTP/APACHE_OPTIONSBLEED    *EXPLOIT* | 
 |  EXPLOITPACK:DAED9B9E8D259B28BF72FC7FDC4755A7  |    5.0  |   Apache mod_session_crypto - Padding Oracle  | https://vulners.com/exploitpack/EXPLOITPACK:DAED9B9E8D259B28BF72FC7FDC4755A7 *EXPLOIT* | 
 |  EXPLOITPACK:C8C256BE0BFF5FE1C0405CB0AA9C075D | 5.0   |  OPTIONS Memory Leak  | https://vulners.com/exploitpack/EXPLOITPACK:C8C256BE0BFF5FE1C0405CB0AA9C075D *EXPLOIT* | 
@@ -78,10 +78,10 @@ Both Target 1 and Target 2 were found to have the following vulnerabilities:
 |  CVE-2015-3183 |   5.0   |  mishandling of large chunk-size values and invalid chunk-extension characters in modules/http/http_filters.c  | https://vulners.com/cve/CVE-2015-3183 | 
 |  CVE-2015-0228 |   5.0  |  allows remote attackers to cause a denial of service (child-process crash)   | https://vulners.com/cve/CVE-2015-0228 | 
 |  CVE-2014-3583 |   5.0  |  FastCGI servers to cause a denial of service (buffer over-read and daemon crash) via long response headers  | https://vulners.com/cve/CVE-2014-3583 | 
-|  1337DAY-ID-28573  |    5.0  |  Apache - HTTP OPTIONS Memory Leak Exploit   | https://vulners.com/zdt/1337DAY-ID-28573  *EXPLOIT* | 
-|  1337DAY-ID-26574  |    5.0  | Microsoft Windows Kernel - win32k!NtQueryCompositionSurfaceBinding Stack Memory Disclosure Exploit    | https://vulners.com/zdt/1337DAY-ID-26574  *EXPLOIT* | 
-|  CVE-2019-0197 |   4.9    | Upgrade request from http/1.1 to http/2 that was not the first request on a connection could lead to a misconfiguration and crash  | https://vulners.com/cve/CVE-2019-0197 | 
-|  EDB-ID:47688 |    4.3   |  Apache Httpd mod_proxy - Error Page Cross-Site Scripting  | https://vulners.com/exploitdb/EDB-ID:47688  *EXPLOIT* | 
+|  1337DAY-ID-28573  |  5.0  |  Apache - HTTP OPTIONS Memory Leak Exploit   | https://vulners.com/zdt/1337DAY-ID-28573  *EXPLOIT* | 
+|  1337DAY-ID-26574  |  5.0  | Microsoft Windows Kernel - win32k!NtQueryCompositionSurfaceBinding Stack Memory Disclosure Exploit    | https://vulners.com/zdt/1337DAY-ID-26574  *EXPLOIT* | 
+|  CVE-2019-0197 |  4.9    | Upgrade request from http/1.1 to http/2 that was not the first request on a connection could lead to a misconfiguration and crash  | https://vulners.com/cve/CVE-2019-0197 | 
+|  EDB-ID:47688 |   4.3   |  Apache Httpd mod_proxy - Error Page Cross-Site Scripting  | https://vulners.com/exploitdb/EDB-ID:47688  *EXPLOIT* | 
 |  CVE-2020-11993 |   4.3   | on certain traffic edge patterns, logging statements were made on the wrong connection, causing concurrent use of memory pools  | https://vulners.com/cve/CVE-2020-11993 | 
 |  CVE-2020-11985 |  4.3  |  using proxying with mod_remoteip and certain mod_rewrite rules, an attacker could spoof their IP address for logging and PHP scripts  | https://vulners.com/cve/CVE-2020-11985 | 
 |  CVE-2019-10092 |  4.3  |  a limited cross-site scripting issue was reported affecting the mod_proxy error page   | https://vulners.com/cve/CVE-2019-10092 | 
@@ -91,19 +91,19 @@ Both Target 1 and Target 2 were found to have the following vulnerabilities:
 |  CVE-2016-4975 |   4.3  |  possible CRLF injection allowing HTTP response splitting attacks for sites which use mod_userdir   | https://vulners.com/cve/CVE-2016-4975  | 
 |  CVE-2015-3185 |   4.3  |  allows remote attackers to bypass intended access restrictions in opportunistic circumstances   | https://vulners.com/cve/CVE-2015-3185 | 
 |  CVE-2014-8109  |  4.3  |   allows remote attackers to bypass intended access restrictions in opportunistic circumstances    | https://vulners.com/cve/CVE-2014-8109  | 
-|  1337DAY-ID-33575 |   4.3  | Apache Httpd mod_proxy - Error Page Cross-Site Scripting Vulnerability |   https://vulners.com/zdt/1337DAY-ID-33575  *EXPLOIT* | 
+|  1337DAY-ID-33575 |  4.3  | Apache Httpd mod_proxy - Error Page Cross-Site Scripting Vulnerability |   https://vulners.com/zdt/1337DAY-ID-33575  *EXPLOIT* | 
 |  CVE-2018-1283 |   3.5  |   a remote user may influence their content by using a "Session" header  |  https://vulners.com/cve/CVE-2018-1283 | 
 |  CVE-2016-8612 |   3.3   |  an Improper Input Validation in the protocol parsing logic resulting in a Segmentation Fault in httpd process  | https://vulners.com/cve/CVE-2016-8612 | 
 
 
 
   # nmap --script vuln -sV -p80 192.168.1.110
-   ![nmapVulnTarget1]/Images/nmap_vuln_Target1.png
+   ![nmapVulnTarget1]/Images/nmap_vuln_Target1.PNG
 
 Target 2 returned identical results to Target 1 
 
   # nmap --script vuln -sV -p80 192.168.1.115
-   ![nmapVulnTarget2]/Images/nmap_vuln_Target2.png
+   ![nmapVulnTarget2]/Images/nmap_vuln_Target2.PNG
 
 ### Exploitation Process
 
@@ -243,6 +243,6 @@ The Red Team was able to penetrate both `Target 1` and `Target 2`, and retrieve 
      ![flag3-T2]/Images/flag3-found_Target2.PNG
     - **Exploit Used**
       - (Common Weakness) CWE-522: Local file inclusion
-      - '192.168.1.115/wordpress/wp-content/uploads/2018/11/flag3.png'
+      - '192.168.1.115/wordpress/wp-content/uploads/2018/11/flag3.PNG'
       REMEDIATION: Proper access controls should be in place in the content areas.
        As this is sensitive information, an additional control to restrict access would be preferable, such as data encrytion. 
