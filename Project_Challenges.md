@@ -4,9 +4,9 @@ Vulnerability research / relating vulnerabilities to expoits / matching these to
 
 Mitigation research / What is the most appropriate solution for each of the vulnerabilities ? / What are alternative approaches ?
 
-Avoiding detection / How could be have acted with stealth to avoid detection ?
+Avoiding detection / How could an attacker act stealthily to avoid detection ?
 
-# Most Fun #
+# Track, Trace and Extract #
 
 Exploring network activity with wireshark and detailing anomolies / suspicious activities.
 
