@@ -213,7 +213,7 @@ Target 1
 
     'show tables;'
 
-    ![mysql-tables](/Images/(mysql-tables_Target1.png)
+    ![mysql-tables](/Images/mysql-tables_Target1.png)
 
     'describe wp_users;'
 
@@ -312,14 +312,17 @@ Target 2
 
     REMEDIATION: Proper input controls within the application would prevent the execution of this exploit. 
      
-     **Establishing the backdoor;**
-     exploit.sh generates backdoor.php on the target, encoded with functions to allow command injection 
+     **Establishing a backdoor;**
+
+     exploit.sh generates backdoor.php on the target, encoded with functions to allow command injection.
+
      The exploit script was edited to include the IP of target2
 
     ![backdoor.php](/Images/edited-exploit_Target2.png)
 
-    Prior to execution, establish a netcat session: 'nc -lvnp 4444' 
-     './exploit.sh'
+    First establish a netcat session: 'nc -lvnp 4444' 
+
+    The it is simply running a script: './exploit.sh'
 
     ![runExploit](/Images/run-exploit_Target2.png)
 
