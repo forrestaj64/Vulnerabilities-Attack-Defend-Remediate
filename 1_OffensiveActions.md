@@ -34,7 +34,7 @@ This scan identifies the services below as potential points of entry:
 
   - List of Critical Vulnerabilities
 
-Both Target 1 and Target 2 were found to have the following vulnerabilities:
+Both Target 1 and Target 2 were found to have the following vulnerabilities (vulnerabilities rated 0.0 excluded):
 
 |       CVE     | RATING | BRIEF DESCRIPTION | LINK  |
 | ------------- | ------------- | ------------- | ------------- |
@@ -43,7 +43,7 @@ Both Target 1 and Target 2 were found to have the following vulnerabilities:
 | CVE-2017-7668   | 7.5  | a bug in token list parsing |   https://vulners.com/cve/CVE-2017-7668 | 
 | CVE-2017-3169   | 7.5   |   mod_ssl may dereference a NULL pointer |  https://vulners.com/cve/CVE-2017-3169 | 
 | CVE-2017-3167  |  7.5   |   may lead to authentication requirements being bypassed |   https://vulners.com/cve/CVE-2017-3167 | 
-|  EXPLOITPACK:44C5118F831D55FAF4259C41D8BDA0AB |  7.2   |   apache2ctl graceful logrotate Local Privilege Escalation |   https://vulners.com/exploitpack/EXPLOITPACK:44C5118F831D55FAF4259C41D8BDA0AB *EXPLOIT* |
+|  EXPLOITPACK:/44C5118F831D55FAF4259C41D8BDA0AB |  7.2   |   apache2ctl graceful logrotate Local Privilege Escalation |   https://vulners.com/exploitpack/EXPLOITPACK:44C5118F831D55FAF4259C41D8BDA0AB *EXPLOIT* |
 | CVE-2019-0211  |  7.2   |   privilege escalation from modules' scripts |   https://vulners.com/cve/CVE-2019-0211 | 
 |   1337DAY-ID-32502  |   7.2   |    apache2ctl graceful logrotate Local Privilege Escalation |   https://vulners.com/zdt/1337DAY-ID-32502 *EXPLOIT* | 
 |  CVE-2018-1312 |   6.8  |    Weak Digest auth nonce generation in mod_auth_digest |   https://vulners.com/cve/CVE-2018-1312 | 
@@ -59,7 +59,7 @@ Both Target 1 and Target 2 were found to have the following vulnerabilities:
 |  CVE-2016-5387|    5.1   |  might allow remote attackers to redirect an application's outbound HTTP traffic to an arbitrary proxy server   | https://vulners.com/cve/CVE-2016-5387 | 
 |  SSV:96537    |    5.0   |  HTTP OPTIONS method can leak Apache's server memory | https://vulners.com/seebug/SSV:96537    *EXPLOIT* | 
 |  MSF:AUXILIARY/SCANNER/HTTP/APACHE_OPTIONSBLEED  |  5.0   | the Allow response header returned from an OPTIONS request may bleed memory if the server has a .htaccess file with an invalid Limit method defined  | https://vulners.com/metasploit/MSF:AUXILIARY/SCANNER/HTTP/APACHE_OPTIONSBLEED    *EXPLOIT* | 
-|  EXPLOITPACK:DAED9B9E8D259B28BF72FC7FDC4755A7  |    5.0  |   Apache mod_session_crypto - Padding Oracle  | https://vulners.com/exploitpack/EXPLOITPACK:DAED9B9E8D259B28BF72FC7FDC4755A7 *EXPLOIT* | 
+|  EXPLOITPACK:/DAED9B9E8D259B28BF72FC7FDC4755A7  |    5.0  |   Apache mod_session_crypto - Padding Oracle  | https://vulners.com/exploitpack/EXPLOITPACK:DAED9B9E8D259B28BF72FC7FDC4755A7 *EXPLOIT* | 
 |  EXPLOITPACK:C8C256BE0BFF5FE1C0405CB0AA9C075D | 5.0   |  OPTIONS Memory Leak  | https://vulners.com/exploitpack/EXPLOITPACK:C8C256BE0BFF5FE1C0405CB0AA9C075D *EXPLOIT* | 
 |  CVE-2020-9490 |   5.0   |  Apache Httpd < None: Push Diary Crash on Specifically Crafted HTTP/2 Header  | https://vulners.com/cve/CVE-2020-9490 | 
 |  CVE-2020-1934  |  5.0   | mod_proxy_ftp may use uninitialized memory when proxying to a malicious FTP server   | https://vulners.com/cve/CVE-2020-1934 | 
