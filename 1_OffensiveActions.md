@@ -213,35 +213,49 @@ Target 1
     ![flag4]/Images/flag4-detail_Target1.png
 
       - flag4 hash value: `715dea6c055b9fe3337544932f2941ce`
+
       ![found4]/Images/flag4-found_Target1.png
+      
     - **Exploit Used**
-      - (Common Weakness) CWE-250: Execution with Unnecessary Privileges
-      User steven has excessive privilege
+      (Common Weakness) CWE-250: Execution with Unnecessary Privileges
+      - User steven has excessive privilege
       ![excess-priv]/Images/sudo-steven_Target1.png
     REMEDIATION: The principle of least privilege should be enforced.
      Limit sudo to specific functions that require it, such as restarting a service that runs with root privilege
      We need to run visudo to edit /etc/sudoers or add specific config under the /etc/sudoers.d directory
 
-- Target 2
+Target 2
   - flag1 hash value: `a2c1f66d2b8051db3a5874b5874b5b6e43e21`
-      ![found1-T2]/Images/flag1-found_Target2.png
+
+    ![found1-T2]/Images/flag1-found_Target2.png
+
     - **Exploit Used**
-      - (Common Weakness) CWE-548: Information leakage through directory listing
+      (Common Weakness) CWE-548: Information leakage through directory listing
       - 'gobuster -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt dir -u 192.168.1.115'
+
     ![gobuster]/Images/gobuster_Target2.png
+
     Browsing the directories discovered I found flag1 at 192.168.1.115/vendor/PATH (/var/www/html/vendor)
+
     ![vendor]/Images/vendor_Target2.png
+
     ![found1-T2]/Images/flag1-found_target2.png
-    REMEDIATION: we should add line, "Options -Indexes" in .ht access (must be added in each folder) OR
-       we can disable directory listing for a specified directory by adding this code in Apache Virtual Host
+
+    REMEDIATION: we can disable directory listing for a specified directory by adding this code in Apache Virtual Host
+
       <Directory /var/www/public_html>
           Options -Indexes
       </Directory>
 
+    OR
+    we should add line, "Options -Indexes" in .ht access (must be added in each folder)
+
   - flag2 hash value: `6a8ed560f0b5358ecf844108048eb337`
-      ![found2-T2]/Images/flag2-found_Target2.png
+
+    ![found2-T2]/Images/flag2-found_Target2.png
+
     - **Exploit Used**
-      - (Common Weakness) CWE-78: Improper Sanitization of Special Elements used in an OS Command
+      (Common Weakness) CWE-78: Improper Sanitization of Special Elements used in an OS Command
       - '192.168.1.115/backdoor.php?cmd=find+/var/www+-type+f+iname+'flag*''
       ![find.flags]/Images/find-flags_Target2.png
       (the path to flag3 is also disclosed here)
@@ -259,9 +273,11 @@ Target 1
 **Y'all are running components with known vulnerabilities**
 
   - flag3 hash value: `a0f568aa9de277887f37730d71520d9b`
+
      ![flag3-T2]/Images/flag3-found_Target2.png
+
     - **Exploit Used**
-      - (Common Weakness) CWE-522: Local file inclusion
+      (Common Weakness) CWE-522: Local file inclusion
       - '192.168.1.115/wordpress/wp-content/uploads/2018/11/flag3.png'
       REMEDIATION: Proper access controls should be in place in the content areas.
-       As this is sensitive information, an additional control to restrict access would be preferable, such as data encrytion. 
+       As this is sensitive information, an additional control to restrict access should be in place, such as data encrytion. 
