@@ -132,6 +132,7 @@ Target 1
     **Exploit Used**
       - (Common Weakness) CWE-540: Inclusion of Sensitive Information in Source Code 
       - Click SERVICE link > 192.168.1.110/service.html, Right Click, View Source, flag1 is visible in a commented out line below the footer. 
+
      REMEDIATION: Source code should be reviewed and all comments removed from production versions of code.
 
   - flag2 hash value: `fc3fd58dcdad9ab23faca6e9a36e581c`
@@ -142,21 +143,32 @@ Target 1
       - (Common Weakness) CWE-521: Weak Password Requirements
       - an easily guessed password for user michael (ssh login),
       michael@target1:/var/www/html/wordpress$ 'cat wp-config.php'
+
     REMEDIATION: Enforcement of password policy on the machine.
+
       install libpam- pwquality: 'sudo apt install libpam-pwquality'
+
       EDIT /etc/pam.d/common-password (use vi or nano)
+
     	find the line: password   requisite   pam_pwquality.so retry=3
+
 	    append: 'minlen=12 maxrepeat=3 ucredit=-1 lcredit=-1 dcredit=-1 ocredit=-1 difok=4 reject_username enforce_for_root'
 
 
       Identified wordpress installed through testing links on homepage; BLOG directs to  192.168.1.110/wordpress
       ![BLOG](/Images/BLOG_Target1.png)
+
       This page has a Log in link
+
       ![loginURL](/Images/Login_URL_Target1.png)
+
       ![wp-login](/Images/wp-login_Target1.png)
 
       Run wpscan to enumerate users: 'wpscan --url http://192.168.1.110/wordpress --enumerate u'
+
+
       ![wpscan1a](/Images/WPScan_Target1a.png)
+
       ![wpscan1b](/Images/WPScan_Target1b.png)
 
   - flag3 hash value: `afc01ab5650591e7dccf93122770cd2`
@@ -170,16 +182,21 @@ Target 1
     ![user-passwd](/Images/mysql-user-login-pass_Target1.png)
 
     REMEDIATION: The principle of least privilege should be enforced by hardening the file permissions.
+
       'chmod 600 /var/www/html/wordpress/wp-config.php'
     
     **ATTACK PROGRESS:**
+
     michael@target1:/user/bin$ 'mysql -u root -p'
+
       ![mysql-login](/Images/mysql-login_Target1.png)
 
     mysql login achieved - what can we find ?
       
     'show databases;'
+
     ![databases](/Images/mysql-db_Target1.png)
+
     'show tables;'
 
     ![tables](/Images/mysql-tables_Target1.png)
@@ -207,22 +224,24 @@ Target 1
     ![user-passwd](/Images/mysql-user-login-pass_Target1.png)
 
     Create file wp_hashes.txt
+
     ![wp-hashes](/Images/wp_hashes_Target1.png)
 
     Use John The Ripper to unhash the password of user steven
+
     'john --wordlist=/root/Downloads/rockyou.txt /root/Downloads/wp_hashes.txt'
 
     ![john](/Images/john-steven_Target1.png)
 
     ssh into Target1 as steven: 'ssh steven@192.168.1.110'
 
-    ![ssh-steven]/(Images/ssh-steven_Target1.png)
+    ![ssh-steven](/Images/ssh-steven_Target1.png)
 
     Verify the sudo permissions of steven: sudo -l'
 
     ![sudo-l](/Images/sudo-steven_Target1.png)
 
-    We see steven has sudo permission for python
+    We see steven has sudo permission for python.
     We can exploit this to gain a shell as root: 'python -c 'import pty;pty.spawn("/bin/bash")''
 
     ![priv-escln](/Images/privilege-escalation_py_Target1.png)
@@ -237,7 +256,6 @@ Target 1
 
       - flag4 hash value: `715dea6c055b9fe3337544932f2941ce`
 
-      ![found4](/Images/flag4-found_Target1.png)
 
     **Exploit Used**
       - (Common Weakness) CWE-250: Execution with Unnecessary Privileges
@@ -246,10 +264,13 @@ Target 1
       ![excess-priv](/Images/sudo-steven_Target1.png)
 
     REMEDIATION: The principle of least privilege should be enforced.
+
      Limit sudo to specific functions that require it, such as restarting a service that runs with root privilege
+
      We need to run visudo to edit /etc/sudoers or add specific config under the /etc/sudoers.d directory
 
 Target 2
+
   - flag1 hash value: `a2c1f66d2b8051db3a5874b5874b5b6e43e21`
 
     ![found1-T2](/Images/flag1-found_Target2.png)
@@ -266,7 +287,7 @@ Target 2
 
     ![found1-T2](/Images/flag1-found_target2.png)
 
-    REMEDIATION: we can disable directory listing for a specified directory by adding this code in Apache Virtual Host
+    REMEDIATION: We can disable directory listing for a specified directory by adding this code in Apache Virtual Host
 
       <Directory /var/www/public_html>
           Options -Indexes
@@ -291,9 +312,9 @@ Target 2
 
     REMEDIATION: Proper input controls within the application would prevent the execution of this exploit. 
      
-     Establishing the backdoor;
-     The script provided was edited to include the IP of target2
+     **Establishing the backdoor;**
      exploit.sh generates backdoor.php on the target, encoded with functions to allow command injection 
+     The exploit script was edited to include the IP of target2
 
     ![backdoor.php](/Images/edited-exploit_Target2.png)
 
@@ -313,5 +334,7 @@ Target 2
       - (Common Weakness) CWE-522: Local file inclusion
       - '192.168.1.115/wordpress/wp-content/uploads/2018/11/flag3.png'
 
-      REMEDIATION: Proper access controls should be in place in the content areas.
-       As this is sensitive information, an additional control to restrict access should be in place, such as data encrytion. 
+    REMEDIATION: Proper access controls should be in place in the content areas.
+
+    As this is sensitive information, an additional control to restrict access should be in place, such as data encrytion. 
+    
