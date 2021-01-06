@@ -1,15 +1,18 @@
-# Project Challenges #
+# Project Challenges # 
 
-Vulnerability research / relating vulnerabilities to expoits / matching these to what was exploited / required to be thorough.
+- Vulnerability research:  relating vulnerabilities found on the fly then matching these to exploits; this aspect demands thoroughness.
 
-Mitigation research / What is the most appropriate solution for each of the vulnerabilities ? / What are alternative approaches ?
+- Mitigation research: What approaches are feasible ?  What is the most appropriate solution for each of the vulnerabilities ?
 
-Avoiding detection / How could an attacker act stealthily to avoid detection ?
+- Avoiding detection: How could an attacker act more stealthily to avoid detection ?  What can a defender do to mitigate this ?
 
-# Track, Trace and Extract #
+- Time pressure: Working on multiple aspects at the same time whilst gathering details for documentation and reports at each step.
 
-Exploring network activity with wireshark and detailing anomolies / suspicious activities.
+# Most Exacting Aspect # 
 
-# Most Novel #
+- Exploring network activity, utilizing more wireshark functionality to detail anomolies / suspicious activities.  Requires precision and lateral thought.
 
-Kibana Watcher - learning to work with the watcher feature, defining specific alert criteria and setting thresholds.
+# Experience Gained # 
+
+- Kibana Watcher: learned to use the Watcher feature for the different beats, defining specific alert criteria and setting appropriate thresholds.
+
