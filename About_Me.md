@@ -1,6 +1,8 @@
 A seasoned IT professional, growing expertise in Cybersecurity disciplines and Information system security practice.
 
-** CISSP, Cybersecurity and ITIL certified, Diploma in IT Business Systems.
+CISSP, USYD Cybersecurity Bootcamp graduate, Network +, Security +, Azure Fundamentals, MCSA,
+
+Diploma in IT Business Systems, ITIL Foundation Certificate. 
 
 Delivered technical solutions for mission-critical systems in Web and Middleware infrastructures.
 
