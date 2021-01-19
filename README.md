@@ -22,6 +22,9 @@ b) Defensive Actions
 
 c) Network Analysis
 
+3. ABOUTME - some information on my career and where I am heading
+
+
 
 
 
